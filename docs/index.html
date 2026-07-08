@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; }
+  body { margin:0; background:#EDEDEB; font-family:'Noto Sans JP',-apple-system,'Segoe UI','Hiragino Sans',sans-serif; color:#37352F; -webkit-font-smoothing:antialiased; }
+  a { color:#37352F; text-decoration:underline; text-decoration-color:rgba(55,53,47,.35); }
+  a:hover { color:#000; text-decoration-color:#000; }
+
+  .page-shell { min-height:100vh; display:flex; justify-content:center; padding:48px 32px; }
+  .page-card { width:880px; max-width:100%; background:#fff; border-radius:8px; box-shadow:0 0 0 1px #E9E9E7,0 8px 24px rgba(0,0,0,.07); overflow:hidden; height:fit-content; }
+  .home-body { padding:64px 64px 64px; display:flex; flex-direction:column; align-items:center; }
+  .home-title { font-size:16px; letter-spacing:.5em; font-weight:700; text-indent:.5em; }
+  .home-subtitle { font-size:calc(16px * 12 / 14); color:#9B9A97; margin-top:12px; letter-spacing:.2em; text-align:center; line-height:1.8; }
+  .home-cards { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin-top:72px; width:100%; }
+  .home-card { border:1px solid #E9E9E7; background:#fff; padding:46px 26px 34px; display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .home-card--link { cursor:pointer; transition:border-color .15s; }
+  .home-card--link:hover { border-color:#37352F; }
+  .home-footer { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:24px; margin-top:64px; font-size:12px; color:#9B9A97; }
+  .subpage-body { padding:56px 64px 64px; }
+  .subpage-title { font-size:32px; font-weight:900; margin-top:20px; line-height:1.3; }
+  .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:28px; }
+  .section-head { display:flex; gap:14px; align-items:baseline; padding:0 2px; flex-wrap:wrap; }
+  .pub-entry { display:flex; gap:12px; margin-top:14px; padding:0 4px; }
+  .pub-entry-body { font-size:14px; line-height:1.75; min-width:0; word-break:break-word; }
+  .coming-soon-box { margin-top:48px; padding:64px 32px; border:1px dashed #E9E9E7; border-radius:4px; background:#FAFAF8; text-align:center; }
+
+  @media (max-width: 880px) {
+    .page-shell { padding:24px 16px; }
+    .home-body, .subpage-body { padding:40px 24px 48px; }
+    .home-cards { grid-template-columns:1fr; gap:16px; margin-top:48px; }
+    .stats-grid { grid-template-columns:repeat(2,1fr); }
+    .section-head { flex-direction:column; gap:4px; align-items:flex-start; }
+    .subpage-title { font-size:28px; }
+    .coming-soon-box { padding:48px 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .page-shell { padding:16px 12px; }
+    .home-body, .subpage-body { padding:32px 18px 40px; }
+    .home-footer { flex-direction:column; gap:12px; }
+    .home-footer .footer-sep { display:none; }
+    .pub-entry { flex-direction:column; gap:4px; }
+    .pub-entry-num { padding-top:0 !important; }
+    .subpage-title { font-size:24px; }
+    .subpage-title-en { display:block; margin-left:0 !important; margin-top:8px; }
+  }
+</style>
+</helmet>
+
+<div class="page-shell">
+  <div class="page-card">
+
+    <!-- ============ HOME ============ -->
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <div data-screen-label="Home">
+        <div class="home-body">
+          <div class="home-title">RYO MURAKAMI</div>
+          <div class="home-subtitle">村上 遼 — Robotics x Sensing in Medical</div>
+
+          <div class="home-cards">
+
+            <div onClick="{{ goResearch }}" class="home-card home-card--link">
+              <svg width="52" height="52" viewBox="0 0 48 48" fill="none"><path d="M18 6h12" stroke="#37352F" stroke-width="2" stroke-linecap="round"></path><path d="M21 6v12L10.5 36.5A4 4 0 0 0 14 42h20a4 4 0 0 0 3.5-5.5L27 18V6" stroke="#37352F" stroke-width="2" stroke-linejoin="round"></path><circle cx="21" cy="32" r="1.7" fill="#37352F"></circle><circle cx="26.5" cy="36" r="1.7" fill="#37352F"></circle></svg>
+              <div style="font-size:18px;font-weight:900;margin-top:24px">研究</div>
+              <div style="font-size:10.5px;letter-spacing:.4em;text-indent:.4em;color:#9B9A97;margin-top:5px">RESEARCH</div>
+              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px">グリオブラストーマ診断・治療<br>脳外科手術ロボット<br>光音響・超音波イメージング<br>制御制御工学<br>MEMS</div>
+            </div>
+
+            <div class="home-card">
+              <svg width="52" height="52" viewBox="0 0 48 48" fill="none"><rect x="13" y="9" width="22" height="33" stroke="#37352F" stroke-width="2"></rect><path d="M8 42h32" stroke="#37352F" stroke-width="2" stroke-linecap="round"></path><path d="M19 16h4M25 16h4M19 23h4M25 23h4M19 30h4M25 30h4" stroke="#37352F" stroke-width="2" stroke-linecap="round"></path><path d="M22 42v-6h4v6" stroke="#37352F" stroke-width="2"></path></svg>
+              <div style="font-size:18px;font-weight:900;margin-top:24px">事業</div>
+              <div style="font-size:10.5px;letter-spacing:.4em;text-indent:.4em;color:#9B9A97;margin-top:5px">BUSINESS</div>
+              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px">研究の社会実装と医療機器開発<br>（今後の取組み）</div>
+              <div style="font-size:11px;color:#9B9A97;margin-top:16px;font-family:'SFMono-Regular',Menlo,monospace;letter-spacing:.12em">FUTURE WORK</div>
+            </div>
+
+            <div class="home-card">
+              <svg width="52" height="52" viewBox="0 0 48 48" fill="none"><path d="M24 8C14.1 8 6 15.2 6 24s8.1 16 18 16c2.5 0 4-1.6 4-3.5 0-1.7-1.2-2.6-1.2-4.2 0-1.9 1.5-3.3 3.6-3.3H34c4.4 0 8-3.6 8-8C42 13 33.9 8 24 8Z" stroke="#37352F" stroke-width="2" stroke-linejoin="round"></path><circle cx="15.5" cy="21" r="1.8" fill="#37352F"></circle><circle cx="23" cy="16" r="1.8" fill="#37352F"></circle><circle cx="31" cy="19.5" r="1.8" fill="#37352F"></circle></svg>
+              <div style="font-size:18px;font-weight:900;margin-top:24px">アート</div>
+              <div style="font-size:10.5px;letter-spacing:.4em;text-indent:.4em;color:#9B9A97;margin-top:5px">ART</div>
+              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px">工学でアートに<br>「からくり」を仕込む</div>
+              <div style="font-size:11px;color:#9B9A97;margin-top:16px;font-family:'SFMono-Regular',Menlo,monospace;letter-spacing:.12em">COMING SOON</div>
+            </div>
+          </div>
+
+          <div class="home-footer">
+            <a href="mailto:ryo.murakami.medtech@gmail.com">ryo.murakami.medtech@gmail.com</a><span class="footer-sep">·</span><a href="https://x.com/RyoMurakami_WPI" target="_blank" rel="noopener noreferrer">X</a><span class="footer-sep">·</span><a href="https://www.linkedin.com/in/ryo-murakami-86095211b/" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="footer-sep">·</span><a href="https://scholar.google.co.jp/citations?user=dm6J8rUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ RESEARCH ============ -->
+    <sc-if value="{{ isResearch }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Research">
+        <div class="subpage-body">
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
+          <div class="subpage-title">研究 <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">RESEARCH</span></div>
+          <sc-if value="{{ cvUpdatedVisible }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:13px;color:#9B9A97;margin-top:10px">{{ cvUpdatedText }}</div>
+          </sc-if>
+
+          <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#F7F6F3;border-radius:4px;padding:14px 18px;margin-top:24px;font-size:14px;color:#787774">CVファイルを読み込んでいます…</div>
+          </sc-if>
+          <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#F1F1EF;border-radius:4px;padding:14px 18px;margin-top:24px;font-size:14px;line-height:1.6"><b>CVファイルの読み込みに失敗しました</b><br><span style="color:#787774">{{ errorMsg }}</span></div>
+          </sc-if>
+
+          <sc-if value="{{ statsVisible }}" hint-placeholder-val="{{ false }}">
+            <div class="stats-grid">
+              <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+                <div style="border:1px solid #E9E9E7;border-radius:4px;padding:16px 14px;text-align:center">
+                  <div style="font-size:26px;font-weight:900">{{ s.value }}</div>
+                  <div style="font-size:11.5px;color:#9B9A97;margin-top:4px;letter-spacing:.05em">{{ s.label }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="2">
+            <div style="margin-top:44px">
+              <div class="section-head">
+                <span style="font-family:'SFMono-Regular',Menlo,Consolas,monospace;font-size:14px;font-weight:700;color:#9B9A97">{{ sec.prefix }}</span>
+                <span style="font-size:20px;font-weight:900">{{ sec.title }}</span>
+                <span style="font-size:12px;color:#9B9A97;letter-spacing:.05em">{{ sec.en }} ・ {{ sec.count }}件</span>
+              </div>
+              <div style="height:1px;background:#E9E9E7;margin-top:8px"></div>
+
+              <sc-for list="{{ sec.entries }}" as="e" hint-placeholder-count="0">
+                <div class="pub-entry">
+                  <span class="pub-entry-num" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace;font-size:12.5px;color:#9B9A97;flex:none;padding-top:3px">[{{ e.num }}]</span>
+                  <div class="pub-entry-body">
+                    <span style="color:#787774">{{ e.authorsBefore }}</span><b>{{ e.authorsMe }}</b><span style="color:#787774">{{ e.authorsAfter }}</span>
+                    <span style="color:#787774"> ({{ e.year }}). </span>
+                    <b>{{ e.title }}</b><span style="color:#787774">. </span>
+                    <i style="color:#787774">{{ e.venueMain }}</i><span style="color:#787774">{{ e.venueRest }}</span>
+                    <sc-if value="{{ e.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ e.href }}" target="_blank" style="font-size:12.5px;margin-left:8px;white-space:nowrap">Link ↗</a></sc-if>
+                  </div>
+                </div>
+              </sc-for>
+
+              <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="0">
+                <div style="display:flex;gap:12px;margin-top:12px;padding:0 4px">
+                  <span style="flex:none;color:#9B9A97">•</span>
+                  <div style="font-size:14px;line-height:1.75"><b>{{ it.bold }}</b><span style="color:#57564F">{{ it.rest }}</span></div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ BUSINESS ============ -->
+    <sc-if value="{{ isBusiness }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Business">
+        <div class="subpage-body">
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
+          <div class="subpage-title">事業 <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">BUSINESS</span></div>
+          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8">研究の社会実装と医療機器開発。内容は現在準備中です。</div>
+
+          <div class="coming-soon-box">
+            <div style="font-size:13px;letter-spacing:.35em;text-indent:.35em;color:#9B9A97;font-family:'SFMono-Regular',Menlo,monospace;font-weight:500">COMING SOON</div>
+            <div style="font-size:12.5px;color:#9B9A97;margin-top:16px;line-height:1.8">公開するまでお待ちください。</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ ART ============ -->
+    <sc-if value="{{ isArt }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Art">
+        <div class="subpage-body">
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
+          <div class="subpage-title">アート <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">ART</span></div>
+          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8">工学の遊び心を形にする制作活動。作品は現在準備中です。</div>
+
+          <div class="coming-soon-box">
+            <div style="font-size:13px;letter-spacing:.35em;text-indent:.35em;color:#9B9A97;font-family:'SFMono-Regular',Menlo,monospace;font-weight:500">COMING SOON</div>
+            <div style="font-size:12.5px;color:#9B9A97;margin-top:16px;line-height:1.8">作品を公開するまでお待ちください。</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;表示&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', status: 'loading', groups: null, tex: null, error: '', cvUpdatedAt: '' };
+
+  formatCvUpdatedAt(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return '';
+    return d.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tokyo' });
+  }
+
+  async fetchCvUpdatedAtFromGit() {
+    const repo = 'RyoMurakami-MedRobo/RyoMurakami-MedRobo.github.io';
+    const path = 'docs/uploads/cv-public.json';
+    try {
+      const res = await fetch('https://api.github.com/repos/' + repo + '/commits?path=' + encodeURIComponent(path) + '&per_page=1');
+      if (!res.ok) return;
+      const list = await res.json();
+      const date = list[0] && list[0].commit && list[0].commit.committer && list[0].commit.committer.date;
+      const fmt = this.formatCvUpdatedAt(date);
+      if (fmt) this.setState({ cvUpdatedAt: fmt });
+    } catch {}
+  }
+
+  async componentDidMount() {
+    try {
+      const res = await fetch('uploads/cv-public.json');
+      if (!res.ok) throw new Error('uploads/cv-public.json が読み込めません (HTTP ' + res.status + ')');
+      const data = await res.json();
+      const updated = this.formatCvUpdatedAt(data.generatedAt);
+      if (updated) this.setState({ cvUpdatedAt: updated });
+      else this.fetchCvUpdatedAtFromGit();
+      this.setState({
+        status: 'ready',
+        groups: data.groups || {},
+        tex: { date: data.date || '', sections: data.texSections || {} }
+      });
+    } catch (err) {
+      this.setState({ status: 'error', error: String(err && err.message || err) });
+    }
+  }
+
+  go(page) { this.setState({ page }); window.scrollTo(0, 0); }
+
+  renderVals() {
+    const st = this.state;
+    const ready = st.status === 'ready';
+    const g = st.groups || {};
+    const texSec = (st.tex && st.tex.sections) || {};
+    const defs = [
+      { grp: 'journalReview', title: '学術誌（査読あり）', en: 'PEER-REVIEWED JOURNALS' },
+      { grp: 'preprint', title: 'プレプリント', en: 'PREPRINTS' },
+      { grp: 'confPaper', title: '国際学会（論文）', en: 'INT’L CONFERENCE PAPERS' },
+      { grp: 'confPres', title: '国際学会（発表のみ）', en: 'PRESENTATIONS' },
+      { tex: '特許', title: '特許', en: 'PATENTS' },
+      { grp: 'book', title: '著書', en: 'BOOKS & CHAPTERS' },
+      { tex: '講演・講義等', title: '講演・講義等', en: 'TALKS & LECTURES' },
+      { tex: 'メディア', title: 'メディア', en: 'MEDIA' },
+      { tex: '受賞等', title: '受賞等', en: 'HONORS & AWARDS' }
+    ];
+    const sections = [];
+    if (ready) {
+      defs.forEach(d => {
+        const entries = d.grp ? (g[d.grp] || []) : [];
+        const items = d.tex ? (texSec[d.tex] || []) : [];
+        const count = entries.length + items.length;
+        if (count === 0) return;
+        sections.push({
+          title: d.title, en: d.en, count, entries, items,
+          prefix: String(sections.length + 1).padStart(2, '0')
+        });
+      });
+    }
+    const stats = ready ? [
+      { value: (g.journalReview || []).length, label: '査読つき論文' },
+      { value: (g.confPaper || []).length + (g.confPres || []).length, label: '国際学会' },
+      { value: (texSec['受賞等'] || []).length, label: '受賞' },
+      { value: (texSec['講演・講義等'] || []).length + (texSec['メディア'] || []).length, label: '講演・メディア' }
+    ] : [];
+    return {
+      isHome: st.page === 'home',
+      isResearch: st.page === 'research',
+      isBusiness: st.page === 'business',
+      isArt: st.page === 'art',
+      goHome: () => this.go('home'),
+      goResearch: () => this.go('research'),
+      goBusiness: () => this.go('business'),
+      goArt: () => this.go('art'),
+      cvUpdatedVisible: !!st.cvUpdatedAt,
+      cvUpdatedText: st.cvUpdatedAt ? '最終更新: ' + st.cvUpdatedAt : '',
+      isLoading: st.status === 'loading',
+      isError: st.status === 'error',
+      errorMsg: st.error,
+      statsVisible: ready && (this.props.showStats ?? true),
+      stats,
+      sections
+    };
+  }
+}
+</script>
+</body>
+</html>

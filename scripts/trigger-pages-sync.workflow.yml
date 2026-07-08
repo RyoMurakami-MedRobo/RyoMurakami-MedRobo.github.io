@@ -1,0 +1,22 @@
+# Copy this file to the private 業績リスト repo as:
+#   .github/workflows/trigger-pages-sync.yml
+name: Trigger public CV sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - main.tex
+      - references.bib
+      - references_*.bib
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger GitHub Pages CV sync
+        env:
+          GH_TOKEN: ${{ secrets.PAGES_REPO_TOKEN }}
+        run: |
+          gh api repos/RyoMurakami-MedRobo/RyoMurakami-MedRobo.github.io/dispatches \
+            -f event_type=sync-cv

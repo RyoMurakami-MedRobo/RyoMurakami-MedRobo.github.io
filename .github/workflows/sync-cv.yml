@@ -1,0 +1,58 @@
+name: Sync public CV JSON
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [sync-cv]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch source files from private CV repo
+        env:
+          GH_TOKEN: ${{ secrets.CV_REPO_PAT }}
+        run: |
+          set -euo pipefail
+          OWNER="RyoMurakami-MedRobo"
+          REPO="-"
+          REF="main"
+          mkdir -p /tmp/cv-source
+          gh api "repos/${OWNER}/${REPO}/contents/references.bib?ref=${REF}" \
+            -H "Accept: application/vnd.github.raw" > /tmp/cv-source/references.bib
+          gh api "repos/${OWNER}/${REPO}/contents/main.tex?ref=${REF}" \
+            -H "Accept: application/vnd.github.raw" > /tmp/cv-source/main.tex
+          echo "SOURCE_COMMIT=$(gh api repos/${OWNER}/${REPO}/commits/${REF} --jq .sha)" >> "$GITHUB_ENV"
+
+      - name: Build public CV JSON
+        run: |
+          SOURCE_COMMIT="$SOURCE_COMMIT" node scripts/build-cv-public.mjs \
+            /tmp/cv-source/references.bib \
+            /tmp/cv-source/main.tex \
+            docs/uploads/cv-public.json
+
+      - name: Remove legacy raw CV files if present
+        run: |
+          rm -f docs/uploads/main.tex docs/uploads/references.bib
+
+      - name: Commit and push
+        run: |
+          if git diff --quiet -- docs/uploads; then
+            echo "No CV changes to publish."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/uploads/cv-public.json
+          git add -u docs/uploads || true
+          git commit -m "Update public CV JSON from private 業績リスト repo"
+          git push

@@ -1,0 +1,660 @@
+{
+  "generatedAt": "2026-07-08T04:16:46.012Z",
+  "sourceRepo": "RyoMurakami-MedRobo/-",
+  "sourceCommit": "",
+  "date": "2026年7月5日時点",
+  "groups": {
+    "journalReview": [
+      {
+        "key": "murakami2026direct",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Satoshi Mori, Haichong K Zhang",
+        "year": "2026",
+        "title": "Direct-Necrosis-Monitoring-Based Adaptive Model Predictive Control for Ablation Therapy Including Patient-Specific Residual Heat Management",
+        "venueMain": "Annals of Biomedical Engineering",
+        "venueRest": ", 1–21",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2026,
+        "sortName": "Ryo Murakami",
+        "num": 1
+      },
+      {
+        "key": "lin2025spectroscopic",
+        "authorsBefore": "Fangzhou Lin, Shang Gao, Yichuan Tang, Xihan Ma, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Ziming Zhang, John D Obayemi, Winston O Soboyejo, Haichong K Zhang",
+        "year": "2025",
+        "title": "Spectroscopic photoacoustic denoising framework using hybrid analytical and data-free learning method",
+        "venueMain": "Photoacoustics",
+        "venueRest": ", 44, 100729",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Fangzhou Lin",
+        "num": 2
+      },
+      {
+        "key": "murakami2025elevational",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, Yichuan Tang, Ryosuke Tsumura, Gregory S Fischer, Haichong K Zhang",
+        "year": "2025",
+        "title": "Elevational Synthetic Aperture Focusing for Rotated Array-Based Three-Dimensional Ultrasound Imaging",
+        "venueMain": "IEEE Access",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Ryo Murakami",
+        "num": 3
+      },
+      {
+        "key": "murakami2025photoacoustics",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, Wojciech G Lesniak, Ryosuke Tsumura, Yichuan Tang, Yasuyuki Tsunoi, Christopher J Nycz, Martin G Pomper, Gregory S Fischer, Haichong K Zhang",
+        "year": "2025",
+        "title": "In-bore MRI-compatible Transrectal Ultrasound and Photoacoustic Imaging",
+        "venueMain": "Photoacoustics",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Ryo Murakami",
+        "num": 4
+      },
+      {
+        "key": "gao2025absolute",
+        "authorsBefore": "Shang Gao, Liudmila Serebrennikova, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Srikanth Boinapally, Sangeeta Ray, Martin G Pomper, Haichong K Zhang",
+        "year": "2025",
+        "title": "Absolute Quantitative Photoacoustic Imaging for Contrast Agents Concentration Estimation Using a Spectral Decomposition Approach",
+        "venueMain": "Molecular Imaging",
+        "venueRest": ", 24, 15353508251368629",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Shang Gao",
+        "num": 5
+      },
+      {
+        "key": "gao2025miniaturized",
+        "authorsBefore": "Shang Gao, Yang Wang, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Hiroshi Ashikaga, Young-Ho Kim, Mohammad Mehrmohammadi, Henry R Halperin, Haichong K Zhang",
+        "year": "2025",
+        "title": "Miniaturized side-firing intracardiac photoacoustic imaging catheter for monitoring radiofrequency ablation",
+        "venueMain": "Scientific Reports",
+        "venueRest": ", 15(1), 1–11",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Shang Gao",
+        "num": 6
+      },
+      {
+        "key": "murakami2024intraoperative",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Satoshi Mori, Haichong K Zhang",
+        "year": "2024",
+        "title": "Intraoperative ablation control based on real-time necrosis monitoring feedback: Numerical evaluation",
+        "venueMain": "Annals of Biomedical Engineering",
+        "venueRest": ", 1–14",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2024,
+        "sortName": "Ryo Murakami",
+        "num": 7
+      },
+      {
+        "key": "murakami2024pareview",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Shang Gao, Haichong K Zhang",
+        "year": "2024",
+        "title": "Photoacoustic Image Guided Intervention and Integration with Robotics",
+        "venueMain": "Nippon Laser Igakushi",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2024,
+        "sortName": "Ryo Murakami",
+        "num": 8
+      },
+      {
+        "key": "ito2017mechanical",
+        "authorsBefore": "Hiroaki Ito, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Shinya Sakuma, Chia-Hung Dylan Tsai, Thomas Gutsmann, Klaus Brandenburg, Johannes MB Pöschl, Fumihito Arai, Makoto Kaneko, Motomu Tanaka",
+        "year": "2017",
+        "title": "Mechanical diagnosis of human erythrocytes by ultra-high speed manipulation unraveled critical time window for global cytoskeletal remodeling",
+        "venueMain": "Scientific reports",
+        "venueRest": ", 7(1), 43134",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2017,
+        "sortName": "Hiroaki Ito",
+        "num": 9
+      },
+      {
+        "key": "higaki2017ion",
+        "authorsBefore": "Yuji Higaki, Benjamin Fröhlich, Akihisa Yamamoto, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Makoto Kaneko, Atsushi Takahara, Motomu Tanaka",
+        "year": "2017",
+        "title": "Ion-specific modulation of interfacial interaction potentials between solid substrates and cell-sized particles mediated via zwitterionic, super-hydrophilic poly (sulfobetaine) brushes",
+        "venueMain": "The Journal of Physical Chemistry B",
+        "venueRest": ", 121(6), 1396–1404",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2017,
+        "sortName": "Yuji Higaki",
+        "num": 10
+      },
+      {
+        "key": "murakami2015cell",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Chia-Hung Dylan Tsai, Makoto Kaneko, Shinya Sakuma, Fumihito Arai",
+        "year": "2015",
+        "title": "Cell pinball: phenomenon and mechanism of inertia-like cell motion in a microfluidic channel",
+        "venueMain": "Lab on a Chip",
+        "venueRest": ", 15(16), 3307–3313",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2015,
+        "sortName": "Ryo Murakami",
+        "num": 11
+      }
+    ],
+    "preprint": [
+      {
+        "key": "rt-mpai-opotek-verasonics-2026",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yichuan Tang, Haichong K. Zhang",
+        "year": "2026",
+        "title": "Democratization of Real-time Multi-Spectral Photoacoustic Imaging: Open-Sourced System Architecture for OPOTEK Phocus & Verasonics Vantage Combination",
+        "venueMain": "",
+        "venueRest": "",
+        "first": false,
+        "href": "https://arxiv.org/abs/2604.15255",
+        "hasLink": true,
+        "sortYear": 2026,
+        "sortName": "Ryo Murakami",
+        "num": 1
+      }
+    ],
+    "confPaper": [
+      {
+        "key": "murakami2026ius",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yichuan Tang, Haichong K Zhang",
+        "year": "2026",
+        "title": "For Accessible Real-Time Multi-Spectral Photoacoustic Imaging: Open-Sourced System Architecture for OPOTEK Phocus & Verasonics Vantage Combination",
+        "venueMain": "2026 IEEE International Ultrasonics Symposium (IUS), (Poster, Accepted)",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2026,
+        "sortName": "Ryo Murakami",
+        "num": 1
+      },
+      {
+        "key": "Murakami2026spie_me",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Kashii Yuhi, Haichong K Zhang",
+        "year": "2026",
+        "title": "Interstitial spectroscopic photoacoustic (IsPA) imaging towards deep brain ablation monitoring: a preliminary study",
+        "venueMain": "2026 SPIE Medical Imaging, (Lecture)",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2026,
+        "sortName": "Ryo Murakami",
+        "num": 2
+      },
+      {
+        "key": "tang2025reflector",
+        "authorsBefore": "Yichuan Tang, Dhruv Chheda, Mikkel Hersum, Jena Taubert, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Haichong Zhang",
+        "year": "2025",
+        "title": "Reflector-integrated ultrasound image-guided access: towards clinical applications",
+        "venueMain": "Medical Imaging 2025: Image-Guided Procedures, Robotic Interventions, and Modeling",
+        "venueRest": ", pp. 385–390",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Yichuan Tang",
+        "num": 3
+      },
+      {
+        "key": "murakami2024preliminary",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Shang Gao, Maanya Chitrapu, Arno Sungarian, Haichong K Zhang",
+        "year": "2024",
+        "title": "Preliminary study on characterizing brain-ablation-induced necrosis through spectroscopic photoacoustic imaging",
+        "venueMain": "Photons Plus Ultrasound: Imaging and Sensing 2024",
+        "venueRest": ", pp. 114–118",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2024,
+        "sortName": "Ryo Murakami",
+        "num": 4
+      },
+      {
+        "key": "murakami2024thermal",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Satoshi Mori, Haichong K Zhang",
+        "year": "2024",
+        "title": "Thermal Ablation Therapy Control with Tissue Necrosis-driven Temperature Feedback Enabled by Neural State Space Model with Extended Kalman Filter",
+        "venueMain": "2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+        "venueRest": ", pp. 2373–2379",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2024,
+        "sortName": "Ryo Murakami",
+        "num": 5
+      },
+      {
+        "key": "gao2024photoacoustic",
+        "authorsBefore": "Shang Gao, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Haichong K Zhang",
+        "year": "2024",
+        "title": "Photoacoustic frequency analysis of the ablation-induced necrosis lesion",
+        "venueMain": "Photons Plus Ultrasound: Imaging and Sensing 2024",
+        "venueRest": ", pp. 183–186",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2024,
+        "sortName": "Shang Gao",
+        "num": 6
+      },
+      {
+        "key": "palisetti2023acoustic",
+        "authorsBefore": "Abhinav Palisetti, Alexander King, Cabot Priestner, Haohao Yi, Yichuan Tang, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Haichong K Zhang",
+        "year": "2023",
+        "title": "Acoustic Reflector-Integrated Encapsulation for Needle-Aligned Ultrasound-Guided PCNL Access",
+        "venueMain": "2023 IEEE International Ultrasonics Symposium (IUS)",
+        "venueRest": ", pp. 1–4",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2023,
+        "sortName": "Abhinav Palisetti",
+        "num": 7
+      },
+      {
+        "key": "serebrennikova2023feasibility",
+        "authorsBefore": "Liudmila Serebrennikova, Shang Gao, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Srikanth Boinapally, Martin G Pomper, Sangeeta Ray, Haichong K Zhang",
+        "year": "2023",
+        "title": "Feasibility of spectra-based quantification algorithm for non-linear photoacoustic contrast agents",
+        "venueMain": "Photons Plus Ultrasound: Imaging and Sensing 2023",
+        "venueRest": ", pp. 34–38",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2023,
+        "sortName": "Liudmila Serebrennikova",
+        "num": 8
+      },
+      {
+        "key": "murakami2023closed",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Shang Gao, Haichong K Zhang",
+        "year": "2023",
+        "title": "Closed-loop contrast source regulation through real-time spectroscopic photoacoustic imaging: phantom evaluation",
+        "venueMain": "Photons Plus Ultrasound: Imaging and Sensing 2023",
+        "venueRest": ", pp. 265–270",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2023,
+        "sortName": "Ryo Murakami",
+        "num": 9
+      },
+      {
+        "key": "ito2017red",
+        "authorsBefore": "Hiroaki Ito, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Chia-Hung Dylan Tsai, Mitsuhiro Horade, Motomu Tanaka, Makoto Kaneko",
+        "year": "2017",
+        "title": "Red blood cell deformability upon continuous or repetitive loadings",
+        "venueMain": "2017 IEEE 30th International Conference on Micro Electro Mechanical Systems (MEMS)",
+        "venueRest": ", pp. 141–144",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2017,
+        "sortName": "Hiroaki Ito",
+        "num": 10
+      },
+      {
+        "key": "murakami2017observation",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Akihisa Yamamoto, Hiroaki Ito, Chia-Hung Dylan Tsai, Mitsuhiro Horade, Motomu Tanaka, Makoto Kaneko",
+        "year": "2017",
+        "title": "Observation of cell pinball through high speed switching between reflection interference and phase contrast",
+        "venueMain": "2017 IEEE 30th International Conference on Micro Electro Mechanical Systems (MEMS)",
+        "venueRest": ", pp. 1337–1338",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2017,
+        "sortName": "Ryo Murakami",
+        "num": 11
+      },
+      {
+        "key": "murakami2016catch",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Chia-Hung Dylan Tsai, Hiroaki Ito, Motomu Tanaka, Shinya Sakuma, Fumihito Arai, Makoto Kaneko",
+        "year": "2016",
+        "title": "Catch, load and launch toward on-chip active cell evaluation",
+        "venueMain": "2016 IEEE International Conference on Robotics and Automation (ICRA)",
+        "venueRest": ", pp. 1713–1718",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2016,
+        "sortName": "Ryo Murakami",
+        "num": 12
+      },
+      {
+        "key": "murakami2015cellwhat",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Makoto Kaneko, Shinya Sakuma, Fumihito Arai",
+        "year": "2015",
+        "title": "Cell Pinball: What is the physics?",
+        "venueMain": "2015 28th IEEE International Conference on Micro Electro Mechanical Systems (MEMS)",
+        "venueRest": ", pp. 431–434",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2015,
+        "sortName": "Ryo Murakami",
+        "num": 13
+      },
+      {
+        "key": "murakami2014cell",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Makoto Kaneko, Shinya Sakuma, Fumihito Arai",
+        "year": "2014",
+        "title": "Cell pinball",
+        "venueMain": "2014 International Symposium on Micro-NanoMechatronics and Human Science (MHS)",
+        "venueRest": ", pp. 1–2",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2014,
+        "sortName": "Ryo Murakami",
+        "num": 14
+      }
+    ],
+    "confPres": [
+      {
+        "key": "Wang2025ius",
+        "authorsBefore": "Yang Wang, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Shang Gao, Yichuan Tang, Gregory S Fischer, Haichong K Zhang",
+        "year": "2025",
+        "title": "Validation of a New Workflow for In-Bore MRI-Compatible Transrectal Ultrasound and Photoacoustic Imaging: Sweeping Method Evaluation",
+        "venueMain": "2025 IEEE International Ultrasonics Symposium (IUS), (Lecture, Abstract Only)",
+        "venueRest": "",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Yang Wang",
+        "num": 1
+      },
+      {
+        "key": "Tang2025ius",
+        "authorsBefore": "Yichuan Tang, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, John Obayemi, Haichong K Zhang",
+        "year": "2025",
+        "title": "In-Bore MRI-Compatible Transrectal Ultrasound and Photoacoustic Imaging: In Vivo Mouse Tumor Model Validation",
+        "venueMain": "2025 IEEE International Ultrasonics Symposium (IUS), (Lecture, Abstract Only)",
+        "venueRest": "",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2025,
+        "sortName": "Yichuan Tang",
+        "num": 2
+      },
+      {
+        "key": "murakami2024iMRI",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, Ryosuke Tsumura, Christopher J Nycz, Nobuhiko Hata, Gregory S Fischer, Haichong K Zhang",
+        "year": "2024",
+        "title": "MRI-compatible In-Bore Ultrasound and Photoacoustic Imaging for Image-Guided Intervention",
+        "venueMain": "14th Interventional MRI Symposium (iMRI), (Short Presentation and Poster, Abstract Only), (Lecture, Abstract Only)",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2024,
+        "sortName": "Ryo Murakami",
+        "num": 3
+      },
+      {
+        "key": "murakami2024ius",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, Ryosuke Tsumura, Yichuan Tang, Haichong K Zhang",
+        "year": "2024",
+        "title": "Three-Dimensional Photoacoustic Imaging Based on Synthetic Aperture Focusing on Rotating Single Linear Array Transducer",
+        "venueMain": "2024 IEEE International Ultrasonics Symposium (IUS), (Lecture, Abstract Only)",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2024,
+        "sortName": "Ryo Murakami",
+        "num": 4
+      },
+      {
+        "key": "murakami2023ius",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, Ryosuke Tsumura, Yichuan Tang, Yasuyuki Tsunoi, Christopher J Nycz, Wojciech G Lesniak, Martin G Pomper, Gregory S Fischer, Haichong K Zhang",
+        "year": "2023",
+        "title": "MRI-Compatible Transrectal Photoacoustic and Ultrasound Imaging System with Remote Mechanical Actuation",
+        "venueMain": "2023 IEEE International Ultrasonics Symposium (IUS), (Lecture, Abstract Only)",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2023,
+        "sortName": "Ryo Murakami",
+        "num": 5
+      },
+      {
+        "key": "murakami2023UITC",
+        "authorsBefore": "",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, Ryosuke Tsumura, Yichuan Tang, Yasuyuki Tsunoi, Christopher J Nycz, Wojciech G Lesniak, Martin G Pomper, Gregory S Fischer, Haichong K Zhang",
+        "year": "2023",
+        "title": "Towards MRI-compatible photoacoustic imaging of prostate cancer: Instrumentation evaluation",
+        "venueMain": "International Symposium on Ultrasonics Imaging and Tissue Characterization (UITC) 2023, (Lecture, Abstract Only)",
+        "venueRest": "",
+        "first": true,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2023,
+        "sortName": "Ryo Murakami",
+        "num": 6
+      },
+      {
+        "key": "gao2023ius_side",
+        "authorsBefore": "Shang Gao, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Yang Wang, Hiroshi Ashikaga, Young-Ho Kim, Mohammad Mehrmohammadi, Henry Halperin, Haichong K Zhang",
+        "year": "2023",
+        "title": "Miniaturized Side-Firing Intracardiac Photoacoustic Imaging Catheter",
+        "venueMain": "2023 IEEE International Ultrasonics Symposium (IUS), (Lecture, Abstract Only)",
+        "venueRest": "",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2023,
+        "sortName": "Shang Gao",
+        "num": 7
+      }
+    ],
+    "book": [
+      {
+        "key": "gao2026photoacoustic",
+        "authorsBefore": "Shang Gao, ",
+        "authorsMe": "Ryo Murakami",
+        "authorsAfter": ", Haichong Kai Zhang",
+        "year": "2026",
+        "title": "Photoacoustic Image-Guided Ablation Therapy and Intervention",
+        "venueMain": "Handbook of Robotic and Image-Guided Surgery",
+        "venueRest": ", Elsevier, pp. 81–92",
+        "first": false,
+        "href": "",
+        "hasLink": false,
+        "sortYear": 2026,
+        "sortName": "Shang Gao",
+        "num": 1
+      }
+    ]
+  },
+  "texSections": {
+    "特許": [
+      {
+        "bold": "",
+        "rest": "U.S. Application No.: 63/602,755, Filed: November 27, 2023, Title: MAGNETIC TOLERANT IMAGING (*Related to MRI-compatible Photoacoustic Imaging)"
+      }
+    ],
+    "講演・講義等": [
+      {
+        "bold": "",
+        "rest": "2024年11月：村上 遼、「医療画像、ロボット工学とその相互作用」、計測自動制御学会九州支部鹿児島地区 講演会、鹿児島大学（鹿児島大学大学院理工学研究科 工学専攻 機械工学プログラムの選択科目「システム制御特論」の一環として）"
+      },
+      {
+        "bold": "",
+        "rest": "2024年7月：村上遼、「特別公開授業」、開志創造高等学校"
+      },
+      {
+        "bold": "",
+        "rest": "2024年6月：村上遼、「VSCode ExtensionとGitHub CopilotでMATLABスクリプト開発」、MATLAB EXPO 2024 ライトニングトーク"
+      },
+      {
+        "bold": "",
+        "rest": "2024年6月：村上遼、「MRI対応 ロボティクス + 光超音波イメージング」、ROBOT & DRONE研究の社会実装を考える、大熊インキュベーションセンター"
+      }
+    ],
+    "メディア": [
+      {
+        "bold": "",
+        "rest": "2023年10月：村上遼、「込山洋一の「みんなの海外生活」」、ゲスト出演、Voicyチャンネル"
+      },
+      {
+        "bold": "",
+        "rest": "2025年4月：村上遼、「革新的イメージング技術でグリオブラストーマの診断治療を ～米ウースター工科大学 手術ロボット工学者 村上遼氏インタビュー #14」、The Medical AI Times Podcast"
+      }
+    ],
+    "受賞等": [
+      {
+        "bold": "2026: Best Graduate Paper Award (to In-Bore Transrectal Photoacoustic/Ultrasound Imaging (Journal: Photoacoustics))",
+        "rest": ", Robotics Engineering Department, Worcester Polytechnic Institute, March."
+      },
+      {
+        "bold": "2024: The Summer Glenn Yee Graduate Travel Award (to IROS 2024)",
+        "rest": ", Robotics Engineering Department, Worcester Polytechnic Institute, July."
+      },
+      {
+        "bold": "2024: Honorary Member",
+        "rest": ", National Academy of Inventors, April."
+      },
+      {
+        "bold": "2023: Student Conference Support",
+        "rest": ", IEEE International Ultrasonics Symposium (IUS) 2023, Quebec, Canada, September."
+      },
+      {
+        "bold": "2023: First Place",
+        "rest": ", Graduate Research Innovation Exchange (GRIE), Robotics Engineering, Cyberphysical Systems, Electrical and Computer Engineering, Worcester Polytechninc Institute, April."
+      },
+      {
+        "bold": "2022: 社長賞",
+        "rest": ", ジンマー・バイオメット合同会社"
+      },
+      {
+        "bold": "2021: 中島記念国際交流財団 令和3年度奨学生採用（情報科学分野）",
+        "rest": ""
+      },
+      {
+        "bold": "2020: Zimmer Biomet Impact Award (x2)",
+        "rest": ", ジンマー・バイオメット合同会社"
+      },
+      {
+        "bold": "2019: Zimmer Biomet Impact Award",
+        "rest": ", ジンマー・バイオメット合同会社"
+      },
+      {
+        "bold": "2018: ROBOMECH表彰",
+        "rest": ", 日本機械学会 ロボティクス・メカトロニクス部門"
+      },
+      {
+        "bold": "2017: 若手優秀講演フェロー賞",
+        "rest": ", 日本機械学会."
+      },
+      {
+        "bold": "2016: IEEE International Conference on Robotics and Automation Japan joint Chapter Young Award",
+        "rest": ", IEEE International Conference on Robotics and Automation (ICRA 2016), May."
+      },
+      {
+        "bold": "2015: 空気調和衛生工学会学生賞",
+        "rest": ", 公益社団法人 空気調和・衛生工学会"
+      },
+      {
+        "bold": "2015: B.P.A",
+        "rest": ", 村上遼、金子真、東森充、多田隈建二郎、\"Cell Pinball: 力学原理の解明\", 一般社団法人 日本機械学会 関西支部 平成26年度学生員卒業研究発表講演会"
+      },
+      {
+        "bold": "2014: Best Paper Award",
+        "rest": ", Ryo Murakami, Makoto Kaneko, Shinya Sakuma, and Fumihito Arai, \"Cell Pinball\", 2014 International Symposium on Micro-NanoMechatronics and Human Science (MHS), November."
+      }
+    ]
+  }
+}
