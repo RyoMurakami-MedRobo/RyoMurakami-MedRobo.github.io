@@ -50,9 +50,6 @@
   .msg-status { margin-top:20px; padding:14px 18px; border-radius:4px; font-size:14px; line-height:1.7; }
   .msg-status--ok { background:#F7F6F3; color:#37352F; }
   .msg-status--err { background:#F1F1EF; color:#787774; }
-  .footer-link { color:#9B9A97; cursor:pointer; text-decoration:underline; text-decoration-color:rgba(155,154,151,.35); }
-  .footer-link:hover { color:#37352F; text-decoration-color:#37352F; }
-
   @media (max-width: 880px) {
     .page-shell { padding:24px 16px; }
     .home-body, .subpage-body { padding:40px 24px 48px; }
@@ -115,7 +112,7 @@
           </div>
 
           <div class="home-footer">
-            <a href="mailto:ryo.murakami.medtech@gmail.com">ryo.murakami.medtech@gmail.com</a><span class="footer-sep">·</span><span onClick="{{ goMessage }}" class="footer-link">匿名メッセージ</span><span class="footer-sep">·</span><a href="https://x.com/RyoMurakami_WPI" target="_blank" rel="noopener noreferrer">X</a><span class="footer-sep">·</span><a href="https://www.linkedin.com/in/ryo-murakami-86095211b/" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="footer-sep">·</span><a href="https://scholar.google.co.jp/citations?user=dm6J8rUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="mailto:ryo.murakami.medtech@gmail.com">ryo.murakami.medtech@gmail.com</a><span class="footer-sep">·</span><a href="#message" onClick="{{ goMessage }}">Message（匿名可）</a><span class="footer-sep">·</span><a href="https://x.com/RyoMurakami_WPI" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a><span class="footer-sep">·</span><a href="https://www.linkedin.com/in/ryo-murakami-86095211b/" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="footer-sep">·</span><a href="https://scholar.google.co.jp/citations?user=dm6J8rUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
           </div>
         </div>
       </div>
@@ -204,7 +201,7 @@
       <div data-screen-label="Message">
         <div class="subpage-body">
           <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
-          <div class="subpage-title">匿名メッセージ <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">MESSAGE</span></div>
+          <div class="subpage-title">Message（匿名可）</div>
           <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8;max-width:560px">ご意見・ご感想・ご質問などをお送りいただけます。お名前と連絡先は任意です。返信が必要な場合のみご記入ください。</div>
 
           <sc-if value="{{ msgNotConfigured }}" hint-placeholder-val="{{ false }}">
