@@ -1,0 +1,13 @@
+name = "murakami-inbox"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+workers_dev = true
+
+[vars]
+GITHUB_OWNER = "RyoMurakami-MedRobo"
+GITHUB_REPO = "inbox"
+ALLOWED_ORIGIN = "https://ryomurakami-medrobo.github.io"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "2707a7908f7c4faca4c6d800041cc23e"

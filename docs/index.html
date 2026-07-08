@@ -34,6 +34,24 @@
   .pub-entry { display:flex; gap:12px; margin-top:14px; padding:0 4px; }
   .pub-entry-body { font-size:14px; line-height:1.75; min-width:0; word-break:break-word; }
   .coming-soon-box { margin-top:48px; padding:64px 32px; border:1px dashed #E9E9E7; border-radius:4px; background:#FAFAF8; text-align:center; }
+  .msg-form { margin-top:32px; max-width:560px; }
+  .msg-field { margin-top:20px; }
+  .msg-label { display:block; font-size:13px; font-weight:700; margin-bottom:8px; }
+  .msg-label-note { font-size:11px; font-weight:500; color:#9B9A97; margin-left:8px; }
+  .msg-input, .msg-textarea { width:100%; border:1px solid #E9E9E7; border-radius:4px; padding:12px 14px; font:inherit; font-size:14px; line-height:1.6; color:#37352F; background:#fff; transition:border-color .15s; }
+  .msg-input:focus, .msg-textarea:focus { outline:none; border-color:#37352F; }
+  .msg-textarea { min-height:160px; resize:vertical; }
+  .msg-hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
+  .msg-actions { margin-top:28px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .msg-submit { border:1px solid #37352F; background:#37352F; color:#fff; font:inherit; font-size:13px; font-weight:700; letter-spacing:.08em; padding:12px 28px; border-radius:4px; cursor:pointer; transition:opacity .15s; }
+  .msg-submit:disabled { opacity:.45; cursor:not-allowed; }
+  .msg-submit:not(:disabled):hover { opacity:.88; }
+  .msg-note { font-size:12.5px; color:#787774; line-height:1.8; margin-top:14px; }
+  .msg-status { margin-top:20px; padding:14px 18px; border-radius:4px; font-size:14px; line-height:1.7; }
+  .msg-status--ok { background:#F7F6F3; color:#37352F; }
+  .msg-status--err { background:#F1F1EF; color:#787774; }
+  .footer-link { color:#9B9A97; cursor:pointer; text-decoration:underline; text-decoration-color:rgba(155,154,151,.35); }
+  .footer-link:hover { color:#37352F; text-decoration-color:#37352F; }
 
   @media (max-width: 880px) {
     .page-shell { padding:24px 16px; }
@@ -97,7 +115,7 @@
           </div>
 
           <div class="home-footer">
-            <a href="mailto:ryo.murakami.medtech@gmail.com">ryo.murakami.medtech@gmail.com</a><span class="footer-sep">·</span><a href="https://x.com/RyoMurakami_WPI" target="_blank" rel="noopener noreferrer">X</a><span class="footer-sep">·</span><a href="https://www.linkedin.com/in/ryo-murakami-86095211b/" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="footer-sep">·</span><a href="https://scholar.google.co.jp/citations?user=dm6J8rUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="mailto:ryo.murakami.medtech@gmail.com">ryo.murakami.medtech@gmail.com</a><span class="footer-sep">·</span><span onClick="{{ goMessage }}" class="footer-link">匿名メッセージ</span><span class="footer-sep">·</span><a href="https://x.com/RyoMurakami_WPI" target="_blank" rel="noopener noreferrer">X</a><span class="footer-sep">·</span><a href="https://www.linkedin.com/in/ryo-murakami-86095211b/" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="footer-sep">·</span><a href="https://scholar.google.co.jp/citations?user=dm6J8rUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
           </div>
         </div>
       </div>
@@ -181,6 +199,52 @@
       </div>
     </sc-if>
 
+    <!-- ============ MESSAGE ============ -->
+    <sc-if value="{{ isMessage }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Message">
+        <div class="subpage-body">
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
+          <div class="subpage-title">匿名メッセージ <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">MESSAGE</span></div>
+          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8;max-width:560px">ご意見・ご感想・ご質問などをお送りいただけます。お名前と連絡先は任意です。返信が必要な場合のみご記入ください。</div>
+
+          <sc-if value="{{ msgNotConfigured }}" hint-placeholder-val="{{ false }}">
+            <div class="msg-status msg-status--err" style="margin-top:24px">現在、送信機能の準備中です。</div>
+          </sc-if>
+
+          <sc-if value="{{ msgFormVisible }}" hint-placeholder-val="{{ false }}">
+            <form class="msg-form" onSubmit="{{ onMsgSubmit }}">
+              <div class="msg-field">
+                <label class="msg-label">メッセージ<span class="msg-label-note">必須</span></label>
+                <textarea class="msg-textarea" value="{{ msgText }}" onInput="{{ onMsgInput }}" placeholder="お気軽にどうぞ" maxlength="2000" required></textarea>
+              </div>
+              <div class="msg-field">
+                <label class="msg-label">お名前<span class="msg-label-note">任意</span></label>
+                <input class="msg-input" type="text" value="{{ msgName }}" onInput="{{ onMsgNameInput }}" placeholder="例: 匿名希望の場合は空欄で構いません" maxlength="100">
+              </div>
+              <div class="msg-field">
+                <label class="msg-label">連絡先<span class="msg-label-note">任意</span></label>
+                <input class="msg-input" type="text" value="{{ msgContact }}" onInput="{{ onMsgContactInput }}" placeholder="例: email@example.com / @handle" maxlength="200">
+              </div>
+              <label class="msg-hp" aria-hidden="true">Leave empty<input type="text" value="{{ msgHp }}" onInput="{{ onMsgHpInput }}" tabindex="-1" autocomplete="off"></label>
+              <div class="msg-actions">
+                <button type="submit" class="msg-submit" disabled="{{ msgSubmitDisabled }}">{{ msgSubmitLabel }}</button>
+              </div>
+              <div class="msg-note">送信内容は非公開の受信箱に届きます。スパム防止のため、短時間に何度も送ることはできません。</div>
+            </form>
+          </sc-if>
+
+          <sc-if value="{{ msgSuccessVisible }}" hint-placeholder-val="{{ false }}">
+            <div class="msg-status msg-status--ok">メッセージを送信しました。ありがとうございます。</div>
+            <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content;margin-top:20px" style-hover="color:#37352F">← Home に戻る</div>
+          </sc-if>
+
+          <sc-if value="{{ msgErrorVisible }}" hint-placeholder-val="{{ false }}">
+            <div class="msg-status msg-status--err"><b>送信に失敗しました</b><br>{{ msgError }}</div>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+
     <!-- ============ ART ============ -->
     <sc-if value="{{ isArt }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Art">
@@ -204,7 +268,14 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;表示&quot;}}">
 class Component extends DCLogic {
-  state = { page: 'home', status: 'loading', groups: null, tex: null, error: '', cvUpdatedAt: '' };
+  // workers/inbox をデプロイしたら URL を設定（例: https://murakami-inbox.<account>.workers.dev）
+  INBOX_API_URL = 'https://murakami-inbox.ryomurakami-medrobo.workers.dev';
+
+  state = {
+    page: 'home', status: 'loading', groups: null, tex: null, error: '', cvUpdatedAt: '',
+    msgText: '', msgName: '', msgContact: '', msgHp: '',
+    msgStatus: 'idle', msgError: ''
+  };
 
   formatCvUpdatedAt(iso) {
     if (!iso) return '';
@@ -226,7 +297,23 @@ class Component extends DCLogic {
     } catch {}
   }
 
+  syncHash(page) {
+    const hash = page === 'message' ? '#message' : '';
+    const path = location.pathname + location.search + hash;
+    if (location.pathname + location.search + location.hash !== path) {
+      history.replaceState(null, '', path);
+    }
+  }
+
+  pageFromHash() {
+    const h = (location.hash || '').replace(/^#/, '');
+    if (h === 'message') return 'message';
+    return null;
+  }
+
   async componentDidMount() {
+    const fromHash = this.pageFromHash();
+    if (fromHash) this.setState({ page: fromHash });
     try {
       const res = await fetch('uploads/cv-public.json');
       if (!res.ok) throw new Error('uploads/cv-public.json が読み込めません (HTTP ' + res.status + ')');
@@ -244,7 +331,57 @@ class Component extends DCLogic {
     }
   }
 
-  go(page) { this.setState({ page }); window.scrollTo(0, 0); }
+  go(page) {
+    this.setState({ page });
+    this.syncHash(page);
+    window.scrollTo(0, 0);
+  }
+
+  resetMsgForm() {
+    this.setState({
+      msgText: '', msgName: '', msgContact: '', msgHp: '',
+      msgStatus: 'idle', msgError: ''
+    });
+  }
+
+  onMsgInput(e) { this.setState({ msgText: e.target.value, msgStatus: 'idle', msgError: '' }); }
+  onMsgNameInput(e) { this.setState({ msgName: e.target.value }); }
+  onMsgContactInput(e) { this.setState({ msgContact: e.target.value }); }
+  onMsgHpInput(e) { this.setState({ msgHp: e.target.value }); }
+
+  async onMsgSubmit(e) {
+    e.preventDefault();
+    const url = this.INBOX_API_URL;
+    if (!url) return;
+    const message = (this.state.msgText || '').trim();
+    if (!message) {
+      this.setState({ msgStatus: 'error', msgError: 'メッセージを入力してください。' });
+      return;
+    }
+    this.setState({ msgStatus: 'sending', msgError: '' });
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message,
+          name: (this.state.msgName || '').trim(),
+          contact: (this.state.msgContact || '').trim(),
+          _hp: (this.state.msgHp || '').trim()
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || '送信に失敗しました (HTTP ' + res.status + ')');
+      }
+      this.setState({ msgStatus: 'success', msgText: '', msgName: '', msgContact: '', msgHp: '' });
+    } catch (err) {
+      this.setState({
+        msgStatus: 'error',
+        msgError: String(err && err.message || err)
+      });
+    }
+  }
 
   renderVals() {
     const st = this.state;
@@ -281,15 +418,37 @@ class Component extends DCLogic {
       { value: (texSec['受賞等'] || []).length, label: '受賞' },
       { value: (texSec['講演・講義等'] || []).length + (texSec['メディア'] || []).length, label: '講演・メディア' }
     ] : [];
+    const inboxConfigured = !!this.INBOX_API_URL;
+    const msgSending = st.msgStatus === 'sending';
+    const msgSuccess = st.msgStatus === 'success';
+    const msgError = st.msgStatus === 'error';
     return {
       isHome: st.page === 'home',
       isResearch: st.page === 'research',
       isBusiness: st.page === 'business',
       isArt: st.page === 'art',
+      isMessage: st.page === 'message',
       goHome: () => this.go('home'),
       goResearch: () => this.go('research'),
       goBusiness: () => this.go('business'),
       goArt: () => this.go('art'),
+      goMessage: () => { this.resetMsgForm(); this.go('message'); },
+      msgNotConfigured: !inboxConfigured,
+      msgFormVisible: inboxConfigured && !msgSuccess,
+      msgSuccessVisible: inboxConfigured && msgSuccess,
+      msgErrorVisible: inboxConfigured && msgError,
+      msgText: st.msgText,
+      msgName: st.msgName,
+      msgContact: st.msgContact,
+      msgHp: st.msgHp,
+      msgError: st.msgError,
+      msgSubmitDisabled: msgSending || !(st.msgText || '').trim(),
+      msgSubmitLabel: msgSending ? '送信中…' : '送信する',
+      onMsgSubmit: (e) => this.onMsgSubmit(e),
+      onMsgInput: (e) => this.onMsgInput(e),
+      onMsgNameInput: (e) => this.onMsgNameInput(e),
+      onMsgContactInput: (e) => this.onMsgContactInput(e),
+      onMsgHpInput: (e) => this.onMsgHpInput(e),
       cvUpdatedVisible: !!st.cvUpdatedAt,
       cvUpdatedText: st.cvUpdatedAt ? '最終更新: ' + st.cvUpdatedAt : '',
       isLoading: st.status === 'loading',
