@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./analytics.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -316,6 +317,8 @@ class Component extends DCLogic {
   async componentDidMount() {
     const fromHash = this.pageFromHash();
     if (fromHash) this.setState({ page: fromHash });
+    const initialPage = fromHash || this.state.page;
+    if (window.siteAnalytics) window.siteAnalytics.trackPageView(initialPage);
     try {
       const res = await fetch('uploads/cv-public.json');
       if (!res.ok) throw new Error('uploads/cv-public.json が読み込めません (HTTP ' + res.status + ')');
@@ -337,6 +340,7 @@ class Component extends DCLogic {
     this.setState({ page });
     this.syncHash(page);
     window.scrollTo(0, 0);
+    if (window.siteAnalytics) window.siteAnalytics.trackPageView(page);
   }
 
   resetMsgForm() {
