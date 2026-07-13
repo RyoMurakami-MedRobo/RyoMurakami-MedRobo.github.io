@@ -11,7 +11,20 @@ import { parseBibTeX, parseTexSections, toPublicationView } from '../docs/cv-par
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 
-const PUBLIC_TEX_SECTIONS = ['特許', '講演・講義等', 'メディア', '受賞等'];
+const PUBLIC_TEX_SECTIONS = {
+  ja: [
+    { key: 'patents', aliases: ['特許'] },
+    { key: 'talks', aliases: ['講演・講義等'] },
+    { key: 'media', aliases: ['メディア'] },
+    { key: 'awards', aliases: ['受賞等'] }
+  ],
+  en: [
+    { key: 'patents', aliases: ['Patents', 'Patent'] },
+    { key: 'talks', aliases: ['Talks and Lectures', 'Talks & Lectures', 'Talks', 'Lectures'] },
+    { key: 'media', aliases: ['Media'] },
+    { key: 'awards', aliases: ['Honors and Awards', 'Honors & Awards', 'Awards', 'Honors'] }
+  ]
+};
 
 function sortPublications(list) {
   return list
@@ -19,7 +32,8 @@ function sortPublications(list) {
     .map((v, i) => Object.assign(v, { num: i + 1 }));
 }
 
-export function buildPublicCv(bibSrc, texSrc, meta = {}) {
+export function buildPublicCv(bibSrc, texSrc, options = {}) {
+  const { locale = 'ja', sourceRepo = 'RyoMurakami-MedRobo/-', ...meta } = options;
   const entries = parseBibTeX(bibSrc).filter(e => !e.keywords.includes('underreview'));
   const tex = parseTexSections(texSrc);
   const grp = (...ks) => sortPublications(
@@ -35,12 +49,14 @@ export function buildPublicCv(bibSrc, texSrc, meta = {}) {
     book: grp('book')
   };
   const texSections = {};
-  for (const name of PUBLIC_TEX_SECTIONS) {
-    if (tex.sections[name]) texSections[name] = tex.sections[name];
+  for (const section of (PUBLIC_TEX_SECTIONS[locale] || PUBLIC_TEX_SECTIONS.ja)) {
+    const name = section.aliases.find(alias => tex.sections[alias]);
+    if (name) texSections[section.key] = tex.sections[name];
   }
   return {
     generatedAt: new Date().toISOString(),
-    sourceRepo: 'RyoMurakami-MedRobo/-',
+    sourceRepo,
+    locale,
     ...meta,
     date: tex.date || '',
     groups,
@@ -56,7 +72,9 @@ function main() {
   const bibSrc = fs.readFileSync(bibPath, 'utf8');
   const texSrc = fs.readFileSync(texPath, 'utf8');
   const payload = buildPublicCv(bibSrc, texSrc, {
-    sourceCommit: process.env.SOURCE_COMMIT || ''
+    sourceCommit: process.env.SOURCE_COMMIT || '',
+    sourceRepo: process.env.SOURCE_REPO || 'RyoMurakami-MedRobo/-',
+    locale: process.env.CV_LOCALE || 'ja'
   });
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true });

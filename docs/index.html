@@ -88,37 +88,38 @@
     <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
       <div data-screen-label="Home">
         <div class="home-body">
-          <div class="home-title"><span class="home-title-main">RYO MURAKAMI</span><span class="home-title-sep">｜</span><span class="home-title-main">村上遼</span></div>
+          <div class="home-title"><span class="home-title-main">RYO MURAKAMI</span><span class="home-title-sep">｜</span><span class="home-title-main">{{ homeName }}</span></div>
           <div class="home-subtitle">Robotics x Sensing for Medical</div>
 
           <div class="home-cards">
 
             <div onClick="{{ goResearch }}" class="home-card home-card--link">
               <svg width="52" height="52" viewBox="0 0 48 48" fill="none"><path d="M18 6h12" stroke="#37352F" stroke-width="2" stroke-linecap="round"></path><path d="M21 6v12L10.5 36.5A4 4 0 0 0 14 42h20a4 4 0 0 0 3.5-5.5L27 18V6" stroke="#37352F" stroke-width="2" stroke-linejoin="round"></path><circle cx="21" cy="32" r="1.7" fill="#37352F"></circle><circle cx="26.5" cy="36" r="1.7" fill="#37352F"></circle></svg>
-              <div style="font-size:18px;font-weight:900;margin-top:24px">研究</div>
+              <div style="font-size:18px;font-weight:900;margin-top:24px">{{ researchLabel }}</div>
               <div style="font-size:10.5px;letter-spacing:.4em;text-indent:.4em;color:#9B9A97;margin-top:5px">RESEARCH</div>
-              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px">グリオブラストーマ診断・治療<br>脳外科手術ロボット<br>光音響・超音波イメージング<br>制御工学<br>MEMS</div>
+              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px;white-space:pre-line">{{ researchDescription }}</div>
             </div>
 
             <div class="home-card">
               <svg width="52" height="52" viewBox="0 0 48 48" fill="none"><rect x="13" y="9" width="22" height="33" stroke="#37352F" stroke-width="2"></rect><path d="M8 42h32" stroke="#37352F" stroke-width="2" stroke-linecap="round"></path><path d="M19 16h4M25 16h4M19 23h4M25 23h4M19 30h4M25 30h4" stroke="#37352F" stroke-width="2" stroke-linecap="round"></path><path d="M22 42v-6h4v6" stroke="#37352F" stroke-width="2"></path></svg>
-              <div style="font-size:18px;font-weight:900;margin-top:24px">事業</div>
+              <div style="font-size:18px;font-weight:900;margin-top:24px">{{ businessLabel }}</div>
               <div style="font-size:10.5px;letter-spacing:.4em;text-indent:.4em;color:#9B9A97;margin-top:5px">BUSINESS</div>
-              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px">研究の社会実装と医療機器開発<br>（今後の取組み）</div>
+              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px;white-space:pre-line">{{ businessDescription }}</div>
               <div style="font-size:11px;color:#9B9A97;margin-top:16px;font-family:'SFMono-Regular',Menlo,monospace;letter-spacing:.12em">FUTURE WORK</div>
             </div>
 
             <div class="home-card">
               <svg width="52" height="52" viewBox="0 0 48 48" fill="none"><path d="M24 8C14.1 8 6 15.2 6 24s8.1 16 18 16c2.5 0 4-1.6 4-3.5 0-1.7-1.2-2.6-1.2-4.2 0-1.9 1.5-3.3 3.6-3.3H34c4.4 0 8-3.6 8-8C42 13 33.9 8 24 8Z" stroke="#37352F" stroke-width="2" stroke-linejoin="round"></path><circle cx="15.5" cy="21" r="1.8" fill="#37352F"></circle><circle cx="23" cy="16" r="1.8" fill="#37352F"></circle><circle cx="31" cy="19.5" r="1.8" fill="#37352F"></circle></svg>
-              <div style="font-size:18px;font-weight:900;margin-top:24px">アート</div>
+              <div style="font-size:18px;font-weight:900;margin-top:24px">{{ artLabel }}</div>
               <div style="font-size:10.5px;letter-spacing:.4em;text-indent:.4em;color:#9B9A97;margin-top:5px">ART</div>
-              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px">工学でアートに<br>「からくり」を仕込む</div>
+              <div style="font-size:12.5px;color:#787774;line-height:1.9;margin-top:18px;white-space:pre-line">{{ artDescription }}</div>
               <div style="font-size:11px;color:#9B9A97;margin-top:16px;font-family:'SFMono-Regular',Menlo,monospace;letter-spacing:.12em">COMING SOON</div>
             </div>
           </div>
 
           <div class="home-footer">
             <a href="mailto:ryo.murakami.medtech@gmail.com">ryo.murakami.medtech@gmail.com</a><span class="footer-sep">·</span><a href="#message" onClick="{{ goMessage }}">Message（匿名可）</a><span class="footer-sep">·</span><a href="https://x.com/RyoMurakami_WPI" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a><span class="footer-sep">·</span><a href="https://www.linkedin.com/in/ryo-murakami-86095211b/" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="footer-sep">·</span><a href="https://scholar.google.co.jp/citations?user=dm6J8rUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <span class="footer-sep">·</span><a href="?lang={{ alternateLang }}" onClick="{{ switchLanguage }}">{{ languageLabel }}</a>
           </div>
         </div>
       </div>
@@ -128,17 +129,17 @@
     <sc-if value="{{ isResearch }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Research">
         <div class="subpage-body">
-          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
-          <div class="subpage-title">研究 <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">RESEARCH</span></div>
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← {{ homeBackLabel }}</div>
+          <div class="subpage-title">{{ researchLabel }} <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">RESEARCH</span></div>
           <sc-if value="{{ cvUpdatedVisible }}" hint-placeholder-val="{{ false }}">
             <div style="font-size:13px;color:#9B9A97;margin-top:10px">{{ cvUpdatedText }}</div>
           </sc-if>
 
           <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
-            <div style="background:#F7F6F3;border-radius:4px;padding:14px 18px;margin-top:24px;font-size:14px;color:#787774">CVファイルを読み込んでいます…</div>
+            <div style="background:#F7F6F3;border-radius:4px;padding:14px 18px;margin-top:24px;font-size:14px;color:#787774">{{ loadingText }}</div>
           </sc-if>
           <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
-            <div style="background:#F1F1EF;border-radius:4px;padding:14px 18px;margin-top:24px;font-size:14px;line-height:1.6"><b>CVファイルの読み込みに失敗しました</b><br><span style="color:#787774">{{ errorMsg }}</span></div>
+            <div style="background:#F1F1EF;border-radius:4px;padding:14px 18px;margin-top:24px;font-size:14px;line-height:1.6"><b>{{ loadErrorText }}</b><br><span style="color:#787774">{{ errorMsg }}</span></div>
           </sc-if>
 
           <sc-if value="{{ statsVisible }}" hint-placeholder-val="{{ false }}">
@@ -190,9 +191,9 @@
     <sc-if value="{{ isBusiness }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Business">
         <div class="subpage-body">
-          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
-          <div class="subpage-title">事業 <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">BUSINESS</span></div>
-          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8">研究の社会実装と医療機器開発。内容は現在準備中です。</div>
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← {{ homeBackLabel }}</div>
+          <div class="subpage-title">{{ businessLabel }} <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">BUSINESS</span></div>
+          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8">{{ businessPageDescription }}</div>
 
           <div class="coming-soon-box">
             <div style="font-size:13px;letter-spacing:.35em;text-indent:.35em;color:#9B9A97;font-family:'SFMono-Regular',Menlo,monospace;font-weight:500">COMING SOON</div>
@@ -206,43 +207,43 @@
     <sc-if value="{{ isMessage }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Message">
         <div class="subpage-body">
-          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
-          <div class="subpage-title">Message（匿名可）</div>
-          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8;max-width:560px">ご意見・ご感想・ご質問などをお送りいただけます。お名前と連絡先は任意です。返信が必要な場合のみご記入ください。</div>
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← {{ homeBackLabel }}</div>
+          <div class="subpage-title">{{ messageTitle }}</div>
+          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8;max-width:560px">{{ messageDescription }}</div>
 
           <sc-if value="{{ msgNotConfigured }}" hint-placeholder-val="{{ false }}">
-            <div class="msg-status msg-status--err" style="margin-top:24px">現在、送信機能の準備中です。</div>
+            <div class="msg-status msg-status--err" style="margin-top:24px">{{ messageNotConfigured }}</div>
           </sc-if>
 
           <sc-if value="{{ msgFormVisible }}" hint-placeholder-val="{{ false }}">
             <form class="msg-form" onSubmit="{{ onMsgSubmit }}">
               <div class="msg-field">
-                <label class="msg-label">メッセージ<span class="msg-label-note">必須</span></label>
-                <textarea class="msg-textarea" value="{{ msgText }}" onInput="{{ onMsgInput }}" placeholder="お気軽にどうぞ" maxlength="2000" required></textarea>
+                <label class="msg-label">{{ messageLabel }}<span class="msg-label-note">{{ requiredLabel }}</span></label>
+                <textarea class="msg-textarea" value="{{ msgText }}" onInput="{{ onMsgInput }}" placeholder="{{ messagePlaceholder }}" maxlength="2000" required></textarea>
               </div>
               <div class="msg-field">
-                <label class="msg-label">お名前<span class="msg-label-note">任意</span></label>
-                <input class="msg-input" type="text" value="{{ msgName }}" onInput="{{ onMsgNameInput }}" placeholder="例: 匿名希望の場合は空欄で構いません" maxlength="100">
+                <label class="msg-label">{{ nameLabel }}<span class="msg-label-note">{{ optionalLabel }}</span></label>
+                <input class="msg-input" type="text" value="{{ msgName }}" onInput="{{ onMsgNameInput }}" placeholder="{{ namePlaceholder }}" maxlength="100">
               </div>
               <div class="msg-field">
-                <label class="msg-label">連絡先<span class="msg-label-note">任意</span></label>
-                <input class="msg-input" type="text" value="{{ msgContact }}" onInput="{{ onMsgContactInput }}" placeholder="例: email@example.com / @handle" maxlength="200">
+                <label class="msg-label">{{ contactLabel }}<span class="msg-label-note">{{ optionalLabel }}</span></label>
+                <input class="msg-input" type="text" value="{{ msgContact }}" onInput="{{ onMsgContactInput }}" placeholder="email@example.com / @handle" maxlength="200">
               </div>
               <label class="msg-hp" aria-hidden="true">Leave empty<input type="text" value="{{ msgHp }}" onInput="{{ onMsgHpInput }}" tabindex="-1" autocomplete="off"></label>
               <div class="msg-actions">
                 <button type="submit" class="msg-submit" disabled="{{ msgSubmitDisabled }}">{{ msgSubmitLabel }}</button>
               </div>
-              <div class="msg-note">送信内容は非公開の受信箱に届きます。スパム防止のため、短時間に何度も送ることはできません。</div>
+              <div class="msg-note">{{ messageNote }}</div>
             </form>
           </sc-if>
 
           <sc-if value="{{ msgSuccessVisible }}" hint-placeholder-val="{{ false }}">
-            <div class="msg-status msg-status--ok">メッセージを送信しました。ありがとうございます。</div>
-            <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content;margin-top:20px" style-hover="color:#37352F">← Home に戻る</div>
+            <div class="msg-status msg-status--ok">{{ messageSuccess }}</div>
+            <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content;margin-top:20px" style-hover="color:#37352F">← {{ homeBackLabel }}</div>
           </sc-if>
 
           <sc-if value="{{ msgErrorVisible }}" hint-placeholder-val="{{ false }}">
-            <div class="msg-status msg-status--err"><b>送信に失敗しました</b><br>{{ msgError }}</div>
+            <div class="msg-status msg-status--err"><b>{{ messageErrorTitle }}</b><br>{{ msgError }}</div>
           </sc-if>
         </div>
       </div>
@@ -252,9 +253,9 @@
     <sc-if value="{{ isArt }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Art">
         <div class="subpage-body">
-          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← Home</div>
-          <div class="subpage-title">アート <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">ART</span></div>
-          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8">工学の遊び心を形にする制作活動。作品は現在準備中です。</div>
+          <div onClick="{{ goHome }}" style="font-size:13px;color:#9B9A97;cursor:pointer;width:fit-content" style-hover="color:#37352F">← {{ homeBackLabel }}</div>
+          <div class="subpage-title">{{ artLabel }} <span class="subpage-title-en" style="font-size:13px;color:#9B9A97;font-weight:700;letter-spacing:.4em;margin-left:10px">ART</span></div>
+          <div style="font-size:14px;color:#787774;margin-top:14px;line-height:1.8">{{ artPageDescription }}</div>
 
           <div class="coming-soon-box">
             <div style="font-size:13px;letter-spacing:.35em;text-indent:.35em;color:#9B9A97;font-family:'SFMono-Regular',Menlo,monospace;font-weight:500">COMING SOON</div>
@@ -275,7 +276,7 @@ class Component extends DCLogic {
   INBOX_API_URL = 'https://murakami-inbox.ryomurakami-medrobo.workers.dev';
 
   state = {
-    page: 'home', status: 'loading', groups: null, tex: null, error: '', cvUpdatedAt: '',
+    page: 'home', lang: 'ja', status: 'loading', groups: null, tex: null, error: '', cvUpdatedAt: '',
     msgText: '', msgName: '', msgContact: '', msgHp: '',
     msgStatus: 'idle', msgError: ''
   };
@@ -284,12 +285,31 @@ class Component extends DCLogic {
     if (!iso) return '';
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return '';
-    return d.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tokyo' });
+    const locale = this.state.lang === 'en' ? 'en-US' : 'ja-JP';
+    return d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tokyo' });
   }
 
-  async fetchCvUpdatedAtFromGit() {
+  languageFromQuery() {
+    const value = new URLSearchParams(location.search).get('lang');
+    return value === 'en' || value === 'ja' ? value : '';
+  }
+
+  async detectLanguage() {
+    const forced = this.languageFromQuery();
+    if (forced) return forced;
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 2500);
+      const res = await fetch('https://ipapi.co/country/', { signal: controller.signal, cache: 'no-store' });
+      clearTimeout(timer);
+      if (res.ok) return (await res.text()).trim().toUpperCase() === 'JP' ? 'ja' : 'en';
+    } catch {}
+    return /^ja(?:-|$)/i.test(navigator.language || '') ? 'ja' : 'en';
+  }
+
+  async fetchCvUpdatedAtFromGit(locale) {
     const repo = 'RyoMurakami-MedRobo/RyoMurakami-MedRobo.github.io';
-    const path = 'docs/uploads/cv-public.json';
+    const path = locale === 'en' ? 'docs/uploads/cv-public-en.json' : 'docs/uploads/cv-public.json';
     try {
       const res = await fetch('https://api.github.com/repos/' + repo + '/commits?path=' + encodeURIComponent(path) + '&per_page=1');
       if (!res.ok) return;
@@ -298,6 +318,27 @@ class Component extends DCLogic {
       const fmt = this.formatCvUpdatedAt(date);
       if (fmt) this.setState({ cvUpdatedAt: fmt });
     } catch {}
+  }
+
+  async loadCv(locale) {
+    this.setState({ lang: locale, status: 'loading', error: '', cvUpdatedAt: '' });
+    const file = locale === 'en' ? 'uploads/cv-public-en.json' : 'uploads/cv-public.json';
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error(file + ' could not be loaded (HTTP ' + res.status + ')');
+      const data = await res.json();
+      const updated = this.formatCvUpdatedAt(data.generatedAt);
+      if (updated) this.setState({ cvUpdatedAt: updated });
+      else this.fetchCvUpdatedAtFromGit(locale);
+      this.setState({ status: 'ready', groups: data.groups || {}, tex: { date: data.date || '', sections: data.texSections || {} } });
+    } catch (err) {
+      this.setState({ status: 'error', error: String(err && err.message || err) });
+    }
+  }
+
+  setLanguage(locale) {
+    if (locale !== 'ja' && locale !== 'en') return;
+    this.loadCv(locale);
   }
 
   syncHash(page) {
@@ -319,21 +360,8 @@ class Component extends DCLogic {
     if (fromHash) this.setState({ page: fromHash });
     const initialPage = fromHash || this.state.page;
     if (window.siteAnalytics) window.siteAnalytics.trackPageView(initialPage);
-    try {
-      const res = await fetch('uploads/cv-public.json');
-      if (!res.ok) throw new Error('uploads/cv-public.json が読み込めません (HTTP ' + res.status + ')');
-      const data = await res.json();
-      const updated = this.formatCvUpdatedAt(data.generatedAt);
-      if (updated) this.setState({ cvUpdatedAt: updated });
-      else this.fetchCvUpdatedAtFromGit();
-      this.setState({
-        status: 'ready',
-        groups: data.groups || {},
-        tex: { date: data.date || '', sections: data.texSections || {} }
-      });
-    } catch (err) {
-      this.setState({ status: 'error', error: String(err && err.message || err) });
-    }
+    const locale = await this.detectLanguage();
+    await this.loadCv(locale);
   }
 
   go(page) {
@@ -391,25 +419,56 @@ class Component extends DCLogic {
 
   renderVals() {
     const st = this.state;
+    const isEn = st.lang === 'en';
+    const text = isEn ? {
+      homeName: 'Ryo Murakami', researchLabel: 'Research', businessLabel: 'Business', artLabel: 'Art',
+      researchDescription: 'Glioblastoma diagnosis and treatment\nNeurosurgical robots\nPhotoacoustic and ultrasound imaging\nControl engineering\nMEMS',
+      businessDescription: 'Translation of research into society and medical device development\n(Future work)',
+      artDescription: 'Embedding mechanical ingenuity\ninto art',
+      businessPageDescription: 'Translating research into society and developing medical devices. More details are coming soon.',
+      artPageDescription: 'Creative work that turns engineering playfulness into tangible forms. More details are coming soon.',
+      loadingText: 'Loading CV…', loadErrorText: 'Failed to load the CV', homeBackLabel: 'Home',
+      messageTitle: 'Message', messageDescription: 'Send comments, feedback, or questions. Your name and contact information are optional.',
+      messageNotConfigured: 'The message function is currently being prepared.', messageLabel: 'Message', requiredLabel: 'Required', optionalLabel: 'Optional',
+      messagePlaceholder: 'Feel free to write anything', nameLabel: 'Name', contactLabel: 'Contact', namePlaceholder: 'Optional',
+      messageNote: 'Messages are delivered to a private inbox. To prevent spam, repeated submissions within a short period are limited.',
+      messageSuccess: 'Message sent. Thank you.', messageErrorTitle: 'Failed to send the message',
+      languageLabel: '日本語', alternateLang: 'ja', updatedPrefix: 'Last updated: ', sendLabel: 'Send', sendingLabel: 'Sending…'
+    } : {
+      homeName: '村上遼', researchLabel: '研究', businessLabel: '事業', artLabel: 'アート',
+      researchDescription: 'グリオブラストーマ診断・治療\n脳外科手術ロボット\n光音響・超音波イメージング\n制御工学\nMEMS',
+      businessDescription: '研究の社会実装と医療機器開発\n（今後の取組み）',
+      artDescription: '工学でアートに\n「からくり」を仕込む',
+      businessPageDescription: '研究の社会実装と医療機器開発。内容は現在準備中です。',
+      artPageDescription: '工学の遊び心を形にする制作活動。作品は現在準備中です。',
+      loadingText: 'CVファイルを読み込んでいます…', loadErrorText: 'CVファイルの読み込みに失敗しました', homeBackLabel: 'Home に戻る',
+      messageTitle: 'Message（匿名可）', messageDescription: 'ご意見・ご感想・ご質問などをお送りいただけます。お名前と連絡先は任意です。返信が必要な場合のみご記入ください。',
+      messageNotConfigured: '現在、送信機能の準備中です。', messageLabel: 'メッセージ', requiredLabel: '必須', optionalLabel: '任意',
+      messagePlaceholder: 'お気軽にどうぞ', nameLabel: 'お名前', contactLabel: '連絡先', namePlaceholder: '例: 匿名希望の場合は空欄で構いません',
+      messageNote: '送信内容は非公開の受信箱に届きます。スパム防止のため、短時間に何度も送ることはできません。',
+      messageSuccess: 'メッセージを送信しました。ありがとうございます。', messageErrorTitle: '送信に失敗しました',
+      languageLabel: 'English', alternateLang: 'en', updatedPrefix: '最終更新: ', sendLabel: '送信する', sendingLabel: '送信中…'
+    };
     const ready = st.status === 'ready';
     const g = st.groups || {};
     const texSec = (st.tex && st.tex.sections) || {};
+    const tex = (key, legacy) => texSec[key] || texSec[legacy] || [];
     const defs = [
-      { grp: 'journalReview', title: '学術誌（査読あり）', en: 'PEER-REVIEWED JOURNALS' },
-      { grp: 'preprint', title: 'プレプリント', en: 'PREPRINTS' },
-      { grp: 'confPaper', title: '国際学会（論文）', en: 'INT’L CONFERENCE PAPERS' },
-      { grp: 'confPres', title: '国際学会（発表のみ）', en: 'PRESENTATIONS' },
-      { tex: '特許', title: '特許', en: 'PATENTS' },
-      { grp: 'book', title: '著書', en: 'BOOKS & CHAPTERS' },
-      { tex: '講演・講義等', title: '講演・講義等', en: 'TALKS & LECTURES' },
-      { tex: 'メディア', title: 'メディア', en: 'MEDIA' },
-      { tex: '受賞等', title: '受賞等', en: 'HONORS & AWARDS' }
+      { grp: 'journalReview', title: isEn ? 'Peer-reviewed journals' : '学術誌（査読あり）', en: 'PEER-REVIEWED JOURNALS' },
+      { grp: 'preprint', title: isEn ? 'Preprints' : 'プレプリント', en: 'PREPRINTS' },
+      { grp: 'confPaper', title: isEn ? 'Conference papers' : '国際学会（論文）', en: 'INT’L CONFERENCE PAPERS' },
+      { grp: 'confPres', title: isEn ? 'Conference presentations' : '国際学会（発表のみ）', en: 'PRESENTATIONS' },
+      { tex: 'patents', legacy: '特許', title: isEn ? 'Patents' : '特許', en: 'PATENTS' },
+      { grp: 'book', title: isEn ? 'Books & chapters' : '著書', en: 'BOOKS & CHAPTERS' },
+      { tex: 'talks', legacy: '講演・講義等', title: isEn ? 'Talks & lectures' : '講演・講義等', en: 'TALKS & LECTURES' },
+      { tex: 'media', legacy: 'メディア', title: isEn ? 'Media' : 'メディア', en: 'MEDIA' },
+      { tex: 'awards', legacy: '受賞等', title: isEn ? 'Honors & awards' : '受賞等', en: 'HONORS & AWARDS' }
     ];
     const sections = [];
     if (ready) {
       defs.forEach(d => {
         const entries = d.grp ? (g[d.grp] || []) : [];
-        const items = d.tex ? (texSec[d.tex] || []) : [];
+        const items = d.tex ? tex(d.tex, d.legacy) : [];
         const count = entries.length + items.length;
         if (count === 0) return;
         sections.push({
@@ -419,10 +478,10 @@ class Component extends DCLogic {
       });
     }
     const stats = ready ? [
-      { value: (g.journalReview || []).length, label: '査読つき論文' },
-      { value: (g.confPaper || []).length + (g.confPres || []).length, label: '国際学会' },
-      { value: (texSec['受賞等'] || []).length, label: '受賞' },
-      { value: (texSec['講演・講義等'] || []).length + (texSec['メディア'] || []).length, label: '講演・メディア' }
+      { value: (g.journalReview || []).length, label: isEn ? 'Peer-reviewed papers' : '査読つき論文' },
+      { value: (g.confPaper || []).length + (g.confPres || []).length, label: isEn ? 'Conferences' : '国際学会' },
+      { value: tex('awards', '受賞等').length, label: isEn ? 'Honors' : '受賞' },
+      { value: tex('talks', '講演・講義等').length + tex('media', 'メディア').length, label: isEn ? 'Talks & media' : '講演・メディア' }
     ] : [];
     const inboxConfigured = !!this.INBOX_API_URL;
     const msgSending = st.msgStatus === 'sending';
@@ -439,6 +498,7 @@ class Component extends DCLogic {
       goBusiness: () => this.go('business'),
       goArt: () => this.go('art'),
       goMessage: () => { this.resetMsgForm(); this.go('message'); },
+      switchLanguage: (e) => { if (e) e.preventDefault(); this.setLanguage(text.alternateLang); },
       msgNotConfigured: !inboxConfigured,
       msgFormVisible: inboxConfigured && !msgSuccess,
       msgSuccessVisible: inboxConfigured && msgSuccess,
@@ -449,20 +509,21 @@ class Component extends DCLogic {
       msgHp: st.msgHp,
       msgError: st.msgError,
       msgSubmitDisabled: msgSending || !(st.msgText || '').trim(),
-      msgSubmitLabel: msgSending ? '送信中…' : '送信する',
+      msgSubmitLabel: msgSending ? text.sendingLabel : text.sendLabel,
       onMsgSubmit: (e) => this.onMsgSubmit(e),
       onMsgInput: (e) => this.onMsgInput(e),
       onMsgNameInput: (e) => this.onMsgNameInput(e),
       onMsgContactInput: (e) => this.onMsgContactInput(e),
       onMsgHpInput: (e) => this.onMsgHpInput(e),
       cvUpdatedVisible: !!st.cvUpdatedAt,
-      cvUpdatedText: st.cvUpdatedAt ? '最終更新: ' + st.cvUpdatedAt : '',
+      cvUpdatedText: st.cvUpdatedAt ? text.updatedPrefix + st.cvUpdatedAt : '',
       isLoading: st.status === 'loading',
       isError: st.status === 'error',
       errorMsg: st.error,
       statsVisible: ready && (this.props.showStats ?? true),
       stats,
-      sections
+      sections,
+      ...text
     };
   }
 }

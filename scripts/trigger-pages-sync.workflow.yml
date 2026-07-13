@@ -1,5 +1,8 @@
-# Copy this file to the private 業績リスト repo as:
+# Copy this file to BOTH private CV repos as:
 #   .github/workflows/trigger-pages-sync.yml
+#
+# Japanese source: RyoMurakami-MedRobo/-
+# English source:  RyoMurakami-MedRobo/CV_RyoMurakami
 name: Trigger public CV sync
 
 on:

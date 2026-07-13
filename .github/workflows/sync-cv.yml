@@ -2,8 +2,15 @@ name: Sync public CV JSON
 
 on:
   workflow_dispatch:
+  schedule:
+    # Fallback in case either private source repo misses its repository_dispatch.
+    - cron: '*/15 * * * *'
   repository_dispatch:
     types: [sync-cv]
+
+concurrency:
+  group: sync-public-cv
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -18,27 +25,31 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Fetch source files from private CV repo
+      - name: Fetch source files from private CV repos
         env:
           GH_TOKEN: ${{ secrets.CV_REPO_PAT }}
         run: |
           set -euo pipefail
           OWNER="RyoMurakami-MedRobo"
-          REPO="-"
           REF="main"
-          mkdir -p /tmp/cv-source
-          gh api "repos/${OWNER}/${REPO}/contents/references.bib?ref=${REF}" \
-            -H "Accept: application/vnd.github.raw" > /tmp/cv-source/references.bib
-          gh api "repos/${OWNER}/${REPO}/contents/main.tex?ref=${REF}" \
-            -H "Accept: application/vnd.github.raw" > /tmp/cv-source/main.tex
-          echo "SOURCE_COMMIT=$(gh api repos/${OWNER}/${REPO}/commits/${REF} --jq .sha)" >> "$GITHUB_ENV"
+          for pair in "ja|-|/tmp/cv-source-ja" "en|CV_RyoMurakami|/tmp/cv-source-en"; do
+            IFS='|' read -r LOCALE REPO DIR <<< "$pair"
+            mkdir -p "$DIR"
+            gh api "repos/${OWNER}/${REPO}/contents/references.bib?ref=${REF}" \
+              -H "Accept: application/vnd.github.raw" > "$DIR/references.bib"
+            gh api "repos/${OWNER}/${REPO}/contents/main.tex?ref=${REF}" \
+              -H "Accept: application/vnd.github.raw" > "$DIR/main.tex"
+            echo "${LOCALE^^}_SOURCE_COMMIT=$(gh api repos/${OWNER}/${REPO}/commits/${REF} --jq .sha)" >> "$GITHUB_ENV"
+          done
 
-      - name: Build public CV JSON
+      - name: Build public CV JSON files
         run: |
-          SOURCE_COMMIT="$SOURCE_COMMIT" node scripts/build-cv-public.mjs \
-            /tmp/cv-source/references.bib \
-            /tmp/cv-source/main.tex \
+          CV_LOCALE=ja SOURCE_REPO="RyoMurakami-MedRobo/-" SOURCE_COMMIT="$JA_SOURCE_COMMIT" node scripts/build-cv-public.mjs \
+            /tmp/cv-source-ja/references.bib /tmp/cv-source-ja/main.tex \
             docs/uploads/cv-public.json
+          CV_LOCALE=en SOURCE_REPO="RyoMurakami-MedRobo/CV_RyoMurakami" SOURCE_COMMIT="$EN_SOURCE_COMMIT" node scripts/build-cv-public.mjs \
+            /tmp/cv-source-en/references.bib /tmp/cv-source-en/main.tex \
+            docs/uploads/cv-public-en.json
 
       - name: Remove legacy raw CV files if present
         run: |
@@ -53,6 +64,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/uploads/cv-public.json
+          git add docs/uploads/cv-public-en.json
           git add -u docs/uploads || true
           git commit -m "Update public CV JSON from private 業績リスト repo"
           git push
