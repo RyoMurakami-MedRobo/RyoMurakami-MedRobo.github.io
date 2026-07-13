@@ -3,10 +3,12 @@ name: Sync public CV JSON
 on:
   workflow_dispatch:
   schedule:
-    # Fallback in case either private source repo misses its repository_dispatch.
+    # Fallback in case either private source repo misses its sync trigger push.
     - cron: '*/15 * * * *'
-  repository_dispatch:
-    types: [sync-cv]
+  push:
+    branches: [main]
+    paths:
+      - cv-sync-trigger/**
 
 concurrency:
   group: sync-public-cv
@@ -25,22 +27,26 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Fetch source files from private CV repos
-        env:
-          GH_TOKEN: ${{ secrets.CV_REPO_PAT }}
+      - name: Fetch Japanese CV source
+        uses: actions/checkout@v4
+        with:
+          repository: RyoMurakami-MedRobo/-
+          ref: main
+          path: /tmp/cv-source-ja
+          ssh-key: ${{ secrets.CV_DEPLOY_KEY_JA }}
+
+      - name: Fetch English CV source
+        uses: actions/checkout@v4
+        with:
+          repository: RyoMurakami-MedRobo/CV_RyoMurakami
+          ref: main
+          path: /tmp/cv-source-en
+          ssh-key: ${{ secrets.CV_DEPLOY_KEY_EN }}
+
+      - name: Record source commits
         run: |
-          set -euo pipefail
-          OWNER="RyoMurakami-MedRobo"
-          REF="main"
-          for pair in "ja|-|/tmp/cv-source-ja" "en|CV_RyoMurakami|/tmp/cv-source-en"; do
-            IFS='|' read -r LOCALE REPO DIR <<< "$pair"
-            mkdir -p "$DIR"
-            gh api "repos/${OWNER}/${REPO}/contents/references.bib?ref=${REF}" \
-              -H "Accept: application/vnd.github.raw" > "$DIR/references.bib"
-            gh api "repos/${OWNER}/${REPO}/contents/main.tex?ref=${REF}" \
-              -H "Accept: application/vnd.github.raw" > "$DIR/main.tex"
-            echo "${LOCALE^^}_SOURCE_COMMIT=$(gh api repos/${OWNER}/${REPO}/commits/${REF} --jq .sha)" >> "$GITHUB_ENV"
-          done
+          echo "JA_SOURCE_COMMIT=$(git -C /tmp/cv-source-ja rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "EN_SOURCE_COMMIT=$(git -C /tmp/cv-source-en rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - name: Build public CV JSON files
         run: |

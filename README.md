@@ -40,10 +40,14 @@ Worker URL（設定済み）: `https://murakami-inbox.ryomurakami-medrobo.worker
 
 ## Secrets（設定済み）
 
+CV 同期は期限切れしない Deploy Key で動作します（PAT 不要）。
+
 | Repo | Secret | 用途 |
 |------|--------|------|
-| `RyoMurakami-MedRobo.github.io` | `CV_REPO_PAT` | 非公開 Repo の読み取り |
-| `RyoMurakami-MedRobo/-` | `PAGES_REPO_TOKEN` | 公開 Repo への sync トリガー |
+| `RyoMurakami-MedRobo.github.io` | `CV_DEPLOY_KEY_JA` | 日本語 CV Repo の読み取り |
+| `RyoMurakami-MedRobo.github.io` | `CV_DEPLOY_KEY_EN` | 英語 CV Repo の読み取り |
+| `RyoMurakami-MedRobo/-` | `PAGES_DEPLOY_KEY` | 公開 Repo への sync トリガー push |
+| `RyoMurakami-MedRobo/CV_RyoMurakami` | `PAGES_DEPLOY_KEY` | 公開 Repo への sync トリガー push |
 
 Cloudflare Worker 側（Wrangler secrets）:
 

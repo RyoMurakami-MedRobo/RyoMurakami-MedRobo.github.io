@@ -17,9 +17,31 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger GitHub Pages CV sync
-        env:
-          GH_TOKEN: ${{ secrets.PAGES_REPO_TOKEN }}
+      - name: Determine locale
+        id: locale
         run: |
-          gh api repos/RyoMurakami-MedRobo/RyoMurakami-MedRobo.github.io/dispatches \
-            -f event_type=sync-cv
+          if [ "${{ github.repository }}" = "RyoMurakami-MedRobo/CV_RyoMurakami" ]; then
+            echo "value=en" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=ja" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout public pages repo
+        uses: actions/checkout@v4
+        with:
+          repository: RyoMurakami-MedRobo/RyoMurakami-MedRobo.github.io
+          ref: main
+          path: pages-repo
+          ssh-key: ${{ secrets.PAGES_DEPLOY_KEY }}
+
+      - name: Bump CV sync trigger
+        working-directory: pages-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p cv-sync-trigger
+          printf '%s %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "${{ github.sha }}" > "cv-sync-trigger/${{ steps.locale.outputs.value }}.txt"
+          git add "cv-sync-trigger/${{ steps.locale.outputs.value }}.txt"
+          git diff --staged --quiet && echo "Trigger already up to date." && exit 0
+          git commit -m "Trigger CV sync from ${{ github.repository }}"
+          git push
