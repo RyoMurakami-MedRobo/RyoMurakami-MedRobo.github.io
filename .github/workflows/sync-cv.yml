@@ -27,9 +27,10 @@ jobs:
 
       - name: Fetch source files from private CV repos
         env:
-          GH_TOKEN: ${{ secrets.CV_REPO_PAT }}
+          RAW_GH_TOKEN: ${{ secrets.CV_REPO_PAT }}
         run: |
           set -euo pipefail
+          export GH_TOKEN="$(printf '%s' "$RAW_GH_TOKEN" | tr -d '\r\n')"
           OWNER="RyoMurakami-MedRobo"
           REF="main"
           for pair in "ja|-|/tmp/cv-source-ja" "en|CV_RyoMurakami|/tmp/cv-source-en"; do
