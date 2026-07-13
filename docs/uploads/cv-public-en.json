@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-13T07:13:25.136Z",
-  "sourceRepo": "RyoMurakami-MedRobo/-",
-  "locale": "ja",
-  "sourceCommit": "109dcf0b5cdbccb41fa596d47c7360d5257be2f2",
-  "date": "2026年7月5日時点",
+  "generatedAt": "2026-07-13T07:13:25.190Z",
+  "sourceRepo": "RyoMurakami-MedRobo/CV_RyoMurakami",
+  "locale": "en",
+  "sourceCommit": "592faaf26d06bf3fe4620048fad1b23841480b60",
+  "date": "+1-774-696-9119 | 68G Shrewsbury Green Dr. | Shrewsbury, MA 01545",
   "groups": {
     "journalReview": [
       {
@@ -560,102 +560,5 @@
       }
     ]
   },
-  "texSections": {
-    "patents": [
-      {
-        "bold": "",
-        "rest": "U.S. Application No.: 63/602,755, Filed: November 27, 2023, Title: MAGNETIC TOLERANT IMAGING (*Related to MRI-compatible Photoacoustic Imaging)"
-      }
-    ],
-    "talks": [
-      {
-        "bold": "",
-        "rest": "2024年11月：村上 遼、「医療画像、ロボット工学とその相互作用」、計測自動制御学会九州支部鹿児島地区 講演会、鹿児島大学（鹿児島大学大学院理工学研究科 工学専攻 機械工学プログラムの選択科目「システム制御特論」の一環として）"
-      },
-      {
-        "bold": "",
-        "rest": "2024年7月：村上遼、「特別公開授業」、開志創造高等学校"
-      },
-      {
-        "bold": "",
-        "rest": "2024年6月：村上遼、「VSCode ExtensionとGitHub CopilotでMATLABスクリプト開発」、MATLAB EXPO 2024 ライトニングトーク"
-      },
-      {
-        "bold": "",
-        "rest": "2024年6月：村上遼、「MRI対応 ロボティクス + 光超音波イメージング」、ROBOT & DRONE研究の社会実装を考える、大熊インキュベーションセンター"
-      }
-    ],
-    "media": [
-      {
-        "bold": "",
-        "rest": "2023年10月：村上遼、「込山洋一の「みんなの海外生活」」、ゲスト出演、Voicyチャンネル"
-      },
-      {
-        "bold": "",
-        "rest": "2025年4月：村上遼、「革新的イメージング技術でグリオブラストーマの診断治療を ～米ウースター工科大学 手術ロボット工学者 村上遼氏インタビュー #14」、The Medical AI Times Podcast"
-      }
-    ],
-    "awards": [
-      {
-        "bold": "2026: Best Graduate Paper Award (to In-Bore Transrectal Photoacoustic/Ultrasound Imaging (Journal: Photoacoustics))",
-        "rest": ", Robotics Engineering Department, Worcester Polytechnic Institute, March."
-      },
-      {
-        "bold": "2024: The Summer Glenn Yee Graduate Travel Award (to IROS 2024)",
-        "rest": ", Robotics Engineering Department, Worcester Polytechnic Institute, July."
-      },
-      {
-        "bold": "2024: Honorary Member",
-        "rest": ", National Academy of Inventors, April."
-      },
-      {
-        "bold": "2023: Student Conference Support",
-        "rest": ", IEEE International Ultrasonics Symposium (IUS) 2023, Quebec, Canada, September."
-      },
-      {
-        "bold": "2023: First Place",
-        "rest": ", Graduate Research Innovation Exchange (GRIE), Robotics Engineering, Cyberphysical Systems, Electrical and Computer Engineering, Worcester Polytechninc Institute, April."
-      },
-      {
-        "bold": "2022: 社長賞",
-        "rest": ", ジンマー・バイオメット合同会社"
-      },
-      {
-        "bold": "2021: 中島記念国際交流財団 令和3年度奨学生採用（情報科学分野）",
-        "rest": ""
-      },
-      {
-        "bold": "2020: Zimmer Biomet Impact Award (x2)",
-        "rest": ", ジンマー・バイオメット合同会社"
-      },
-      {
-        "bold": "2019: Zimmer Biomet Impact Award",
-        "rest": ", ジンマー・バイオメット合同会社"
-      },
-      {
-        "bold": "2018: ROBOMECH表彰",
-        "rest": ", 日本機械学会 ロボティクス・メカトロニクス部門"
-      },
-      {
-        "bold": "2017: 若手優秀講演フェロー賞",
-        "rest": ", 日本機械学会."
-      },
-      {
-        "bold": "2016: IEEE International Conference on Robotics and Automation Japan joint Chapter Young Award",
-        "rest": ", IEEE International Conference on Robotics and Automation (ICRA 2016), May."
-      },
-      {
-        "bold": "2015: 空気調和衛生工学会学生賞",
-        "rest": ", 公益社団法人 空気調和・衛生工学会"
-      },
-      {
-        "bold": "2015: B.P.A",
-        "rest": ", 村上遼、金子真、東森充、多田隈建二郎、\"Cell Pinball: 力学原理の解明\", 一般社団法人 日本機械学会 関西支部 平成26年度学生員卒業研究発表講演会"
-      },
-      {
-        "bold": "2014: Best Paper Award",
-        "rest": ", Ryo Murakami, Makoto Kaneko, Shinya Sakuma, and Fumihito Arai, \"Cell Pinball\", 2014 International Symposium on Micro-NanoMechatronics and Human Science (MHS), November."
-      }
-    ]
-  }
+  "texSections": {}
 }
