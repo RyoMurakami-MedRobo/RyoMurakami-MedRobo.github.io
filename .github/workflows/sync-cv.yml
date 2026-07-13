@@ -32,7 +32,7 @@ jobs:
         with:
           repository: RyoMurakami-MedRobo/-
           ref: main
-          path: /tmp/cv-source-ja
+          path: cv-source-ja
           ssh-key: ${{ secrets.CV_DEPLOY_KEY_JA }}
 
       - name: Fetch English CV source
@@ -40,21 +40,21 @@ jobs:
         with:
           repository: RyoMurakami-MedRobo/CV_RyoMurakami
           ref: main
-          path: /tmp/cv-source-en
+          path: cv-source-en
           ssh-key: ${{ secrets.CV_DEPLOY_KEY_EN }}
 
       - name: Record source commits
         run: |
-          echo "JA_SOURCE_COMMIT=$(git -C /tmp/cv-source-ja rev-parse HEAD)" >> "$GITHUB_ENV"
-          echo "EN_SOURCE_COMMIT=$(git -C /tmp/cv-source-en rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "JA_SOURCE_COMMIT=$(git -C cv-source-ja rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "EN_SOURCE_COMMIT=$(git -C cv-source-en rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - name: Build public CV JSON files
         run: |
           CV_LOCALE=ja SOURCE_REPO="RyoMurakami-MedRobo/-" SOURCE_COMMIT="$JA_SOURCE_COMMIT" node scripts/build-cv-public.mjs \
-            /tmp/cv-source-ja/references.bib /tmp/cv-source-ja/main.tex \
+            cv-source-ja/references.bib cv-source-ja/main.tex \
             docs/uploads/cv-public.json
           CV_LOCALE=en SOURCE_REPO="RyoMurakami-MedRobo/CV_RyoMurakami" SOURCE_COMMIT="$EN_SOURCE_COMMIT" node scripts/build-cv-public.mjs \
-            /tmp/cv-source-en/references.bib /tmp/cv-source-en/main.tex \
+            cv-source-en/references.bib cv-source-en/main.tex \
             docs/uploads/cv-public-en.json
 
       - name: Remove legacy raw CV files if present
