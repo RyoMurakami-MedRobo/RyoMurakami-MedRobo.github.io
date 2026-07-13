@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-13T07:22:57.864Z",
+  "generatedAt": "2026-07-13T07:24:22.173Z",
   "sourceRepo": "RyoMurakami-MedRobo/CV_RyoMurakami",
   "locale": "en",
-  "sourceCommit": "232c728135a2705d68f469403088ad364425cadd",
-  "date": "+1-774-696-9119 | 68G Shrewsbury Green Dr. | Shrewsbury, MA 01545",
+  "sourceCommit": "",
+  "date": "",
   "groups": {
     "journalReview": [
       {
@@ -560,5 +560,106 @@
       }
     ]
   },
-  "texSections": {}
+  "texSections": {
+    "patents": [
+      {
+        "bold": "",
+        "rest": "U.S. Application No.: 63/602,755, Filed: November 27, 2023, Title: MAGNETIC TOLERANT IMAGING (*Related to MRI-compatible Photoacoustic Imaging)"
+      }
+    ],
+    "talks": [
+      {
+        "bold": "",
+        "rest": "Ryo Murakami, \"Medical Imaging and Its Interaction with Robotics,\" Lecture at The Society of Instrument and Control Engineers (SICE) Kyushu Branch, Kagoshima University, Japan, November 2024. (as part of the elective course \"Advanced System Control\" in the Mechanical Engineering Program, Department of Engineering, Graduate School of Science and Engineering at Kagoshima University)"
+      },
+      {
+        "bold": "",
+        "rest": "Ryo Murakami, \"Special Public Lecture,\" Lecture at Kaishi Souzou High School, Virtual, July, 2024."
+      },
+      {
+        "bold": "",
+        "rest": "Ryo Murakami, \"Script Development using VSCode and GitHub Copilot,\" Talk at MATLAB EXPO 2024 JAPAN Lightning Talk, Virtual, June, 2024."
+      },
+      {
+        "bold": "",
+        "rest": "Ryo Murakami, \"MRI-compatible Robotics and Photoacoustic Imaging,\" Talk at ROBOT & DRONE Research for Social Implementation (Okuma Incubation Center), Virtual, June, 2024."
+      }
+    ],
+    "media": [
+      {
+        "bold": "",
+        "rest": "Guest on Voicy Audio Channel, Featured in \"Everyone's Life Abroad\", a Voicy channel hosted by Yoichi Komiyama. (Oct 16-20, 2023)"
+      },
+      {
+        "bold": "",
+        "rest": "Interview on The Medical AI Times Podcast, Episode #14. Topic: \"Innovative Imaging Technology for Glioblastoma Diagnosis and Treatment – Interview with Ryo Murakami, Surgical Robotics Engineer, Worcester Polytechnic Institute.\" (Apr 17, 2025)"
+      }
+    ],
+    "awards": [
+      {
+        "bold": "2026: Best Graduate Paper Award (to In-Bore Transrectal Photoacoustic/Ultrasound Imaging (Journal: Photoacoustics))",
+        "rest": ", Robotics Engineering Department, Worcester Polytechnic Institute, March."
+      },
+      {
+        "bold": "2024: The Summer Glenn Yee Graduate Travel Award (to IROS 2024)",
+        "rest": ", Robotics Engineering Department, Worcester Polytechnic Institute, July."
+      },
+      {
+        "bold": "2024: Honorary Member",
+        "rest": ", National Academy of Inventors, April."
+      },
+      {
+        "bold": "2023: Student Conference Support",
+        "rest": ", IEEE International Ultrasonics Symposium (IUS) 2023, Quebec, Canada, September."
+      },
+      {
+        "bold": "2023: First Place",
+        "rest": ", Graduate Research Innovation Exchange (GRIE), Robotics Engineering, Cyberphysical Systems, Electrical and Computer Engineering, WPI, April."
+      },
+      {
+        "bold": "2022: President Award",
+        "rest": ", Zimmer Biomet G.K."
+      },
+      {
+        "bold": "2021: Nakajima Foundation Scholarship",
+        "rest": ", for Ph.D. program."
+      },
+      {
+        "bold": "2020: Zimmer Biomet Impact Award (x2)",
+        "rest": ", Zimmer Biomet G.K."
+      },
+      {
+        "bold": "2019: Zimmer Biomet Impact Award",
+        "rest": ", Zimmer Biomet G.K."
+      },
+      {
+        "bold": "2021: Nakajima Foundation Scholarship",
+        "rest": ", for Ph.D. program."
+      },
+      {
+        "bold": "2018: ROBOMECH Award",
+        "rest": ", The Japan Society of Mechanical Engineers (JSME) Conference on Robotics and Mechatronics, June."
+      },
+      {
+        "bold": "2017: Young Fellow Award",
+        "rest": ", The Japan Society of Mechanical Engineers (JSME), May."
+      },
+      {
+        "bold": "2016: IEEE International Conference on Robotics and Automation Japan joint Chapter Young Award",
+        "rest": ", IEEE International Conference on Robotics and Automation (ICRA 2016), May."
+      },
+      {
+        "bold": "2015: Promotion Award Student Award",
+        "rest": ", The Society of Heating, Air-Conditioning and Sanitary Engineers of Japan."
+      },
+      {
+        "bold": "2015: Best Presentation Award",
+        "rest": ", Ryo Murakami, Makoto Kaneko, Mitsuru Higashiimori, and Kenjiro Tadakuma, \"Cell Pincall: Elucidate the Physics\", The Japan Society of Mechanical Engineers (JSME) Kansai Branch 2014 Lecture of Student Graduation Research, March."
+      },
+      {
+        "bold": "2014: Best Paper Award",
+        "rest": ", Ryo Murakami, Makoto Kaneko, Shinya Sakuma, and Fumihito Arai, \"Cell Pinball\", 2014 International Symposium on Micro-NanoMechatronics and Human Science (MHS), November."
+      }
+    ]
+  }
 }

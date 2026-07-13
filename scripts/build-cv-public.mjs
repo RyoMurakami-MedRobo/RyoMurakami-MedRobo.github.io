@@ -6,7 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { parseBibTeX, parseTexSections, toPublicationView } from '../docs/cv-parser.js';
+import { normalizeTexSectionName, parseBibTeX, parseTexSections, toPublicationView } from '../docs/cv-parser.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -20,9 +20,9 @@ const PUBLIC_TEX_SECTIONS = {
   ],
   en: [
     { key: 'patents', aliases: ['Patents', 'Patent'] },
-    { key: 'talks', aliases: ['Talks and Lectures', 'Talks & Lectures', 'Talks', 'Lectures'] },
+    { key: 'talks', aliases: ['Talks & Lectures', 'Talks and Lectures', 'Talks', 'Lectures'] },
     { key: 'media', aliases: ['Media'] },
-    { key: 'awards', aliases: ['Honors and Awards', 'Honors & Awards', 'Awards', 'Honors'] }
+    { key: 'awards', aliases: ['AWARDS & HONORS', 'Awards & Honors', 'Honors and Awards', 'Honors & Awards', 'Awards', 'Honors'] }
   ]
 };
 
@@ -50,8 +50,10 @@ export function buildPublicCv(bibSrc, texSrc, options = {}) {
   };
   const texSections = {};
   for (const section of (PUBLIC_TEX_SECTIONS[locale] || PUBLIC_TEX_SECTIONS.ja)) {
-    const name = section.aliases.find(alias => tex.sections[alias]);
-    if (name) texSections[section.key] = tex.sections[name];
+    const alias = section.aliases
+      .map(normalizeTexSectionName)
+      .find(name => tex.sections[name]);
+    if (alias) texSections[section.key] = tex.sections[alias];
   }
   return {
     generatedAt: new Date().toISOString(),

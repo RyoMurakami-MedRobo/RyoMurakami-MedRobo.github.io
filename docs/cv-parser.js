@@ -175,6 +175,18 @@ function parseTexItem(raw) {
   return { bold: '', rest: cleanLatex(s) };
 }
 
+export function normalizeTexSectionName(name) {
+  return cleanLatex(name).replace(/\s+/g, ' ').trim();
+}
+
+function parseTexDate(doc) {
+  const ja = doc.match(/\$\|\$\s*([^\n]*(?:時点|\d{4}年)[^\n]*)/);
+  if (ja) return cleanLatex(ja[1]);
+  const footer = doc.match(/Last updated:\s*([^\n}\\]+)/i);
+  if (footer) return cleanLatex(footer[1]);
+  return '';
+}
+
 export function parseTexSections(src) {
   const noComments = src.split('\n').map(line => {
     let out = '';
@@ -186,19 +198,20 @@ export function parseTexSections(src) {
   }).join('\n');
   const docIdx = noComments.indexOf('\\begin{document}');
   const doc = docIdx >= 0 ? noComments.slice(docIdx) : noComments;
-  const dm = doc.match(/\$\|\$\s*([^\n]+)/);
-  const date = dm ? cleanLatex(dm[1]) : '';
+  const date = parseTexDate(doc);
   const marks = [];
-  const re = /\\section\*\{([^}]*)\}/g;
+  const re = /\\(?:sub)*section\*\{([^}]*)\}/g;
   let m;
   while ((m = re.exec(doc))) marks.push({ name: m[1], start: m.index, end: re.lastIndex });
   const sections = {};
   marks.forEach((mk, idx) => {
     const chunk = doc.slice(mk.end, idx + 1 < marks.length ? marks[idx + 1].start : doc.length);
     const im = chunk.match(/\\begin\{itemize\}([\s\S]*?)\\end\{itemize\}/);
-    sections[mk.name] = im
+    const items = im
       ? im[1].split(/\\item\b/).map(x => x.trim()).filter(Boolean).map(parseTexItem)
       : [];
+    const key = normalizeTexSectionName(mk.name);
+    if (key) sections[key] = items;
   });
   return { date, sections };
 }
